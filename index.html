@@ -769,11 +769,6 @@
                 </div>
             </div>
 
-            <div class="p-5 border-t border-slate-800 flex items-center justify-end bg-slate-900/60">
-                <button id="insp-mastery-btn" onclick="toggleInspectorMastery()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                    Toggle Mastery Status
-                </button>
-            </div>
         </div>
     </div>
 
@@ -1365,7 +1360,7 @@
                         <i data-lucide="download" class="w-4 h-4"></i>
                         <span>1. Saving / Exporting Data</span>
                     </h4>
-                    <p>Tap the <strong class="text-teal-300">Export</strong> (download) button in the top header. This downloads a complete backup file containing all custom poses, modifiers, calisthenics drills, stretches, and mastery statuses.</p>
+                    <p>Tap the <strong class="text-teal-300">Export</strong> (download) button in the top header. This downloads a complete backup file containing all custom poses, modifiers, calisthenics drills and stretches.</p>
                 </div>
 
                 <div class="glass-card p-3.5 rounded-xl border-emerald-500/30 bg-emerald-950/20 space-y-1">
@@ -1407,7 +1402,6 @@
                 target: 'Back',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: "Supported Bolster Child's Pose", sanskritName: "Sālamba Bālāsana", level: 'Beginner', intensity: 1, cues: 'Place a high bolster between legs to support chest and torso. Relieves all lumbar and knee compression.' },
                     regressed_2: { category: 'regressed', englishName: "Wide-Knee Block Head Rest", sanskritName: "Prasārita Bālāsana (Block)", level: 'Beginner', intensity: 2, cues: 'Spread knees wide, rest forehead on a block at medium height to ease tight hips and hamstrings.' },
@@ -1424,7 +1418,6 @@
                 target: 'Core/Abs',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Wall-Backed Mountain Pose', sanskritName: 'Bhitti Tāḍāsana', level: 'Beginner', intensity: 1, cues: 'Stand with heels, glutes, and shoulders lightly resting against a wall to calibrate spinal stack.' },
                     standard_1: { category: 'standard', englishName: 'Mountain Pose (Standard)', sanskritName: 'Tāḍāsana', level: 'Beginner', intensity: 2, cues: 'Stand with big toes touching, lift kneecaps, tuck tailbone subtly, pull navel in, and broaden collarbones.' },
@@ -1440,7 +1433,6 @@
                 target: 'Head & Crown',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Supported Knees Savasana', sanskritName: 'Sālamba Śavāsana', level: 'Beginner', intensity: 1, cues: 'Place a bolster under bent knees to completely flatten lower lumbar back and release hip flexor tension.' },
                     standard_1: { category: 'standard', englishName: 'Classic Corpse Pose', sanskritName: 'Śavāsana', level: 'Beginner', intensity: 1, cues: 'Lie flat on back, arms 45 degrees away from body with palms facing up, legs completely relaxed outward.' },
@@ -1455,7 +1447,6 @@
                 target: 'Back',
                 prereq: 'Tabletop Hold',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Seated Chair Cat-Cow', sanskritName: 'Pīṭha Mārjāryāsana', level: 'Beginner', intensity: 2, cues: 'Sit on chair edge, arch chest forward on inhale and round back tucking chin on exhale without knee strain.' },
                     standard_1: { category: 'standard', englishName: 'Tabletop Cat-Cow Flow', sanskritName: 'Mārjāryāsana-Bitilāsana', level: 'Beginner', intensity: 3, cues: 'Wrist under shoulders, knees under hips. Inhale arch spine and lift gaze (Cow); exhale round back and tuck chin (Cat).' },
@@ -1470,7 +1461,6 @@
                 target: 'Shoulders',
                 prereq: 'Plank Foundation',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Bent-Knee Downward Dog', sanskritName: 'Jānu Bhenda Adho Mukha Śvānāsana', level: 'Beginner', intensity: 3, cues: 'Bend knees generously to prioritize a long spine while pushing the mat away through index finger knuckles.' },
                     regressed_2: { category: 'regressed', englishName: 'Wall-Supported Down Dog', sanskritName: 'Bhitti Adho Mukha Śvānāsana', level: 'Beginner', intensity: 2, cues: 'Place hands on wall at hip height in an L-shape to stretch shoulders without wrist or leg load.' },
@@ -1487,7 +1477,6 @@
                 target: 'Core/Abs',
                 prereq: 'Tabletop Hold',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Kneeling Plank', sanskritName: 'Jānu Phalakāsana', level: 'Beginner', intensity: 3, cues: 'Drop knees to mat, forming a straight line from crown of head down to knees. Engage lower core.' },
                     regressed_2: { category: 'regressed', englishName: 'Forearm Knee Plank', sanskritName: 'Kūrpara Jānu Phalakāsana', level: 'Beginner', intensity: 3, cues: 'Rest forearms on mat with knees down to reduce wrist strain while activating deep abs.' },
@@ -1506,7 +1495,6 @@
                 target: 'Hips',
                 prereq: 'Mountain Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Kickstand Tree Pose', sanskritName: 'Sālamba Vṛkṣāsana', level: 'Beginner', intensity: 3, cues: 'Rest heel of lifted foot against standing ankle with toes touching mat like a kickstand.' },
                     standard_1: { category: 'standard', englishName: 'Tree Pose (Standard)', sanskritName: 'Vṛkṣāsana', level: 'Beginner', intensity: 5, cues: 'Place sole of lifted foot on inner calf or inner thigh (never knee joint). Hands in prayer at chest.' },
@@ -1522,7 +1510,6 @@
                 target: 'Quadriceps',
                 prereq: 'High Lunge',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Warrior I (Narrow Stance)', sanskritName: 'Sūkṣma Vīrabhadrāsana A', level: 'Beginner', intensity: 4, cues: 'Step back foot shorter and wider on railway tracks to allow hips to square forward easily.' },
                     regressed_2: { category: 'regressed', englishName: 'Warrior I (Hands on Hips)', sanskritName: 'Sālamba Vīrabhadrāsana A', level: 'Beginner', intensity: 3, cues: 'Keep hands on hips to verify hip point squareness before extending arms overhead.' },
@@ -1539,7 +1526,6 @@
                 target: 'Quadriceps',
                 prereq: 'Standing Balance',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Warrior II (Shallow Knee Bend)', sanskritName: 'Sūkṣma Vīrabhadrāsana B', level: 'Beginner', intensity: 4, cues: 'Keep front knee slightly bent above ankle with a narrower stance to build hip endurance safely.' },
                     regressed_2: { category: 'regressed', englishName: 'Chair-Supported Warrior II', sanskritName: 'Pīṭha Vīrabhadrāsana B', level: 'Beginner', intensity: 2, cues: 'Rest front thigh on a folding chair seat while extending back leg and arms into alignment.' },
@@ -1556,7 +1542,6 @@
                 target: 'Hamstrings',
                 prereq: 'High Lunge',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Supported Wall/Chair Warrior III', sanskritName: 'Sālamba Vīrabhadrāsana C', level: 'Beginner', intensity: 4, cues: 'Rest hands on a wall or back of chair at hip height to keep hips level while lifting back leg parallel.' },
                     standard_1: { category: 'standard', englishName: 'Warrior III (Standard)', sanskritName: 'Vīrabhadrāsana C', level: 'Intermediate', intensity: 7, cues: 'Balance on one leg, hinge at hips until torso and back leg are parallel to mat, arms extended forward.' },
@@ -1572,7 +1557,6 @@
                 target: 'Hips',
                 prereq: 'Tree Pose',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Eagle Kickstand / Bear Hug', sanskritName: 'Sālamba Garuḍāsana', level: 'Beginner', intensity: 3, cues: 'Cross right thigh over left, resting right toes on floor as kickstand. Cross arms into bear hug.' },
                     standard_1: { category: 'standard', englishName: 'Eagle Pose (Standard)', sanskritName: 'Garuḍāsana', level: 'Intermediate', intensity: 6, cues: 'Wrap right leg around left shin, bind right arm under left at elbows/wrists, sink hips into squat.' },
@@ -1587,7 +1571,6 @@
                 target: 'Hips',
                 prereq: 'Warrior II',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Forearm-to-Thigh Side Angle', sanskritName: 'Sūkṣma Utthita Pārśvakonasana', level: 'Beginner', intensity: 4, cues: 'Rest front forearm on front thigh, extending top arm diagonally overhead line from back heel.' },
                     standard_1: { category: 'standard', englishName: 'Extended Side Angle (Standard)', sanskritName: 'Utthita Pārśvakonasana', level: 'Intermediate', intensity: 6, cues: 'Place lower hand on floor inside or outside front foot, sweep top arm over ear creating long side diagonal.' },
@@ -1602,7 +1585,6 @@
                 target: 'Hamstrings',
                 prereq: 'Warrior II',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Triangle (Hand on Block)', sanskritName: 'Sālamba Trikonasana', level: 'Beginner', intensity: 4, cues: 'Place bottom hand on high block outside front shin to keep both side waistlines long.' },
                     regressed_2: { category: 'regressed', englishName: 'Micro-Bent Knee Triangle', sanskritName: 'Sūkṣma Trikonasana', level: 'Beginner', intensity: 4, cues: 'Keep a soft micro-bend in front knee to prevent hyperextension of hamstring tendons.' },
@@ -1619,7 +1601,6 @@
                 target: 'Hips',
                 prereq: 'Triangle Pose',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Half Moon (Hand on Block)', sanskritName: 'Sālamba Ardha Chandrāsana', level: 'Intermediate', intensity: 5, cues: 'Rest lower hand on a yoga block 12 inches ahead of standing pinky toe for balance support.' },
                     regressed_2: { category: 'regressed', englishName: 'Wall-Back Supported Half Moon', sanskritName: 'Bhitti Ardha Chandrāsana', level: 'Beginner', intensity: 4, cues: 'Lean shoulder and raised leg against wall to learn stacking hips without losing balance.' },
@@ -1638,7 +1619,6 @@
                 target: 'Shoulders',
                 prereq: 'Dolphin Hold 60s',
                 activeModifier: 'regressed_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Forearm Stand (Wall Tap)', sanskritName: 'Sālamba Piñcha Mayūrāsana', level: 'Intermediate', intensity: 7, cues: 'Place forearms parallel 3 inches from wall with block between thumbs. Kick up gently to wall.' },
                     standard_1: { category: 'standard', englishName: 'Feathered Peacock (Freestanding)', sanskritName: 'Piñcha Mayūrāsana', level: 'Advanced', intensity: 9, cues: 'Press forearms firmly down, press floor away, draw ribs in, gaze between wrists with legs stacked.' },
@@ -1653,7 +1633,6 @@
                 target: 'Core/Abs',
                 prereq: 'Crow Pose',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Side Crow (Two Arm Shelf)', sanskritName: 'Sālamba Pārśva Bakāsana', level: 'Intermediate', intensity: 6, cues: 'Squat and twist torso, resting outer hip on back elbow and outer knee on front elbow shelf.' },
                     standard_1: { category: 'standard', englishName: 'Side Crow (Single Arm Balance)', sanskritName: 'Pārśva Bakāsana', level: 'Advanced', intensity: 8, cues: 'Support outer knee solely on opposite tricep, floating hip free off back arm.' },
@@ -1668,7 +1647,6 @@
                 target: 'Core/Abs',
                 prereq: 'Crow Pose & Elephant Trunk',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Seated Eight-Angle Hook Prep', sanskritName: 'Upaviṣṭha Aṣṭāvakarāsana', level: 'Intermediate', intensity: 6, cues: 'Work hooking top leg over upper shoulder while seated on mat, practicing ankles interlocked.' },
                     standard_1: { category: 'standard', englishName: 'Eight-Angle Pose (Standard)', sanskritName: 'Aṣṭāvakarāsana', level: 'Advanced', intensity: 9, cues: 'Hook thigh high over arm, lock ankles, press up to balance while extending legs sideways and bending elbows.' }
@@ -1682,7 +1660,6 @@
                 target: 'Head & Crown',
                 prereq: 'Bridge Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Legs-Up-the-Wall Pose', sanskritName: 'Viparīta Karaṇī', level: 'Beginner', intensity: 2, cues: 'Rest lower back on bolster with legs extended vertically up a wall for passive restorative inversion.' },
                     standard_1: { category: 'standard', englishName: 'Supported Shoulderstand', sanskritName: 'Sālamba Sarvāṅgāsana', level: 'Intermediate', intensity: 6, cues: 'Support lower back with palms, elbows shoulder-width apart, lift hips and feet vertically in straight line.' },
@@ -1697,7 +1674,6 @@
                 target: 'Shoulders',
                 prereq: 'Plank Pose & Wrist Flexibility',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Crow Pose (Block Elevation)', sanskritName: 'Sālamba Bakāsana', level: 'Beginner', intensity: 4, cues: 'Stand on a block to raise hips. Rest knees on outer triceps and lean weight forward onto fingertips.' },
                     regressed_2: { category: 'regressed', englishName: 'Crow Toe-Touch Drills', sanskritName: 'Sūkṣma Bakāsana', level: 'Intermediate', intensity: 5, cues: 'Lean forward into hands while floating just one toe off mat at a time to build wrist load capacity.' },
@@ -1714,7 +1690,6 @@
                 target: 'Head & Crown',
                 prereq: 'Dolphin Hold 60s',
                 activeModifier: 'regressed_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Headstand (Wall Support)', sanskritName: 'Sālamba Śīrṣāsana', level: 'Intermediate', intensity: 6, cues: 'Set tripod forearm crown foundation 3 inches from wall. Walk feet up wall lightly.' },
                     regressed_2: { category: 'regressed', englishName: 'Dolphin Pose Hold', sanskritName: 'Caturāṅga Daṇḍāsana (Dolphin)', level: 'Beginner', intensity: 5, cues: 'Forearms on mat, hips high like Down Dog, building shoulder girdle stability before inverting.' },
@@ -1733,7 +1708,6 @@
                 target: 'Back',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Restorative Supported Bridge', sanskritName: 'Sālamba Setu Bandhasana', level: 'Beginner', intensity: 2, cues: 'Place a yoga block under sacrum on low or medium height to passively stretch hip flexors.' },
                     standard_1: { category: 'standard', englishName: 'Bridge Pose (Standard)', sanskritName: 'Setu Bandha Sarvāṅgāsana', level: 'Beginner', intensity: 4, cues: 'Feet flat under knees, drive heels down to lift pelvis, interlock hands beneath back and roll shoulders under.' },
@@ -1748,7 +1722,6 @@
                 target: 'Chest',
                 prereq: 'Bridge Pose & Cobra',
                 activeModifier: 'regressed_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Wheel Crown Press Prep', sanskritName: 'Sūkṣma Ūrdhva Dhanurāsana', level: 'Intermediate', intensity: 6, cues: 'Plant hands by ears with elbows high, press into feet/hands to rest crown gently on mat before full lift.' },
                     standard_1: { category: 'standard', englishName: 'Wheel Pose (Standard)', sanskritName: 'Ūrdhva Dhanurāsana', level: 'Advanced', intensity: 8, cues: 'Press through feet and palms to lift body into arc, straightening arms and pushing chest over wrists.' },
@@ -1763,7 +1736,6 @@
                 target: 'Chest',
                 prereq: 'Cobra Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Half Bow Pose', sanskritName: 'Ardhā Dhanurāsana', level: 'Beginner', intensity: 4, cues: 'Reach back with one hand to hold same-side ankle while extending opposite arm forward.' },
                     standard_1: { category: 'standard', englishName: 'Bow Pose (Standard)', sanskritName: 'Dhanurāsana', level: 'Intermediate', intensity: 6, cues: 'Lie prone, bend knees, reach back to grip ankles. Kick feet into hands to lift chest and thighs.' },
@@ -1778,7 +1750,6 @@
                 target: 'Chest',
                 prereq: 'Cobra Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Cobra Transition Up-Dog', sanskritName: 'Sūkṣma Ūrdhva Mukha Śvānāsana', level: 'Beginner', intensity: 4, cues: 'Keep thighs resting lightly on mat while straightening arms to build wrists and shoulder lift.' },
                     standard_1: { category: 'standard', englishName: 'Upward Dog (Standard)', sanskritName: 'Ūrdhva Mukha Śvānāsana', level: 'Intermediate', intensity: 6, cues: 'Press tops of feet and palms down, lifting thighs and knees completely off mat while rolling chest forward.' }
@@ -1792,7 +1763,6 @@
                 target: 'Chest',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Baby Cobra Pose', sanskritName: 'Laghu Bhujaṅgāsana', level: 'Beginner', intensity: 2, cues: 'Lie prone, lift upper chest using back muscles alone with zero weight in palms.' },
                     regressed_2: { category: 'regressed', englishName: 'Sphinx Pose', sanskritName: 'Salamba Bhujangasana', level: 'Beginner', intensity: 2, cues: 'Rest forearms on mat with elbows under shoulders to gently arch upper back spine.' },
@@ -1809,7 +1779,6 @@
                 target: 'Chest',
                 prereq: 'Cobra Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Camel Pose (Hands on Sacrum)', sanskritName: 'Sūkṣma Uṣṭrāsana', level: 'Beginner', intensity: 4, cues: 'Kneel tall, palms pressing lower sacrum forward while arching upper chest upward gently.' },
                     regressed_2: { category: 'regressed', englishName: 'Camel Pose (Block Support)', sanskritName: 'Sālamba Uṣṭrāsana (Block)', level: 'Beginner', intensity: 4, cues: 'Place blocks on high setting outside ankles to reach back comfortably without over-arching.' },
@@ -1828,7 +1797,6 @@
                 target: 'Hips',
                 prereq: 'Side Plank & Down Dog',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Supported Kneeling Wild Thing', sanskritName: 'Jānu Camatkarāsana', level: 'Beginner', intensity: 4, cues: 'Keep bottom knee grounded on mat while extending top leg and arching top arm overhead.' },
                     standard_1: { category: 'standard', englishName: 'Wild Thing (Standard)', sanskritName: 'Camatkarāsana', level: 'Intermediate', intensity: 7, cues: 'Flip three-legged dog, land ball of top foot behind, lift hips high and extend top arm toward floor.' }
@@ -1842,7 +1810,6 @@
                 target: 'Hips',
                 prereq: 'Pigeon Pose',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Supported Firelog (Block Gap)', sanskritName: 'Sālamba Agnistambhāsana', level: 'Intermediate', intensity: 5, cues: 'Place a block or folded blanket in gap between top knee and bottom ankle.' },
                     standard_1: { category: 'standard', englishName: 'Firelog Pose (Standard)', sanskritName: 'Agnistambhāsana', level: 'Advanced', intensity: 8, cues: 'Stack shins directly parallel on top of each other, ankles flexed over knees, sitting tall or folding.' }
@@ -1856,7 +1823,6 @@
                 target: 'Hips',
                 prereq: 'Bound Angle',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Strap-Assisted Cow Face', sanskritName: 'Sālamba Gomukhāsana', level: 'Beginner', intensity: 4, cues: 'Sit on blanket and hold a yoga strap between hands behind back if fingertips do not bind.' },
                     standard_1: { category: 'standard', englishName: 'Cow Face Pose (Standard)', sanskritName: 'Gomukhāsana', level: 'Intermediate', intensity: 6, cues: 'Stack knees in center line, sit between heels, bind right elbow up and left elbow down behind back.' }
@@ -1870,7 +1836,6 @@
                 target: 'Hips',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Block-Supported Garland Squat', sanskritName: 'Pīṭha Malāsana', level: 'Beginner', intensity: 2, cues: 'Sit glutes onto a block on low/medium setting while pressing elbows inside knees.' },
                     standard_1: { category: 'standard', englishName: 'Garland Squat (Standard)', sanskritName: 'Malāsana', level: 'Beginner', intensity: 4, cues: 'Deep squat with feet slightly turned out, palms in prayer, elbows gently wedging knees open.' }
@@ -1884,7 +1849,6 @@
                 target: 'Quadriceps',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Block-Seated Hero Pose', sanskritName: 'Sālamba Vīrāsana', level: 'Beginner', intensity: 2, cues: 'Place one or two blocks between ankles to sit comfortably upright without knee strain.' },
                     standard_1: { category: 'standard', englishName: 'Hero Pose (Standard)', sanskritName: 'Vīrāsana', level: 'Intermediate', intensity: 5, cues: 'Kneel with knees together and feet wider than hips, sitting glutes down directly onto mat.' }
@@ -1898,7 +1862,6 @@
                 target: 'Hips',
                 prereq: 'None',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Bound Angle (Blanket Support)', sanskritName: 'Sālamba Baddha Koṇāsana', level: 'Beginner', intensity: 2, cues: 'Sit on edge of a folded blanket to tilt pelvis forward and reduce knee groin strain.' },
                     regressed_2: { category: 'regressed', englishName: 'Reclined Bound Angle (Bolster)', sanskritName: 'Supta Baddha Koṇāsana', level: 'Beginner', intensity: 2, cues: 'Lie back on a bolster with blocks under outer thighs for restorative hip opening.' },
@@ -1915,7 +1878,6 @@
                 target: 'Hips',
                 prereq: 'Low Lunge Hold',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Pigeon Pose (Glute Bolster Support)', sanskritName: 'Sālamba Eka Pāda Rājakapotāsana', level: 'Beginner', intensity: 4, cues: 'Place a folded yoga blanket or bolster under front glute to keep hips level without strain.' },
                     regressed_2: { category: 'regressed', englishName: 'Reclined Figure-Four Stretch', sanskritName: 'Supta Kapotāsana', level: 'Beginner', intensity: 3, cues: 'Lie flat on back, cross front ankle over opposite knee, hugging back thigh to chest.' },
@@ -1934,7 +1896,6 @@
                 target: 'Core/Abs',
                 prereq: 'Extended Side Angle',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Kneeling Revolved Side Angle', sanskritName: 'Jānu Parivṛtta Pārśvakonasana', level: 'Beginner', intensity: 4, cues: 'Lower back knee to mat, hook opposite elbow outside front thigh in prayer twist.' },
                     standard_1: { category: 'standard', englishName: 'Revolved Side Angle (Standard)', sanskritName: 'Parivṛtta Pārśvakonasana', level: 'Intermediate', intensity: 7, cues: 'Lift back knee off mat, hook opposite elbow outside front knee, press palms in prayer to revolve chest.' },
@@ -1949,7 +1910,6 @@
                 target: 'Core/Abs',
                 prereq: 'Boat Pose & Lotus',
                 activeModifier: 'standard_1',
-                mastered: false,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Cross-Legged Block Lift', sanskritName: 'Sālamba Tolāsana', level: 'Intermediate', intensity: 6, cues: 'Sit cross-legged with hands on blocks, press down to hover glutes off mat.' },
                     standard_1: { category: 'standard', englishName: 'Scale Pose (Lotus Hold)', sanskritName: 'Tolāsana', level: 'Advanced', intensity: 9, cues: 'In full Lotus, plant palms beside hips and press firmly down to lift entire lower body off floor.' }
@@ -1963,7 +1923,6 @@
                 target: 'Core/Abs',
                 prereq: 'Plank Pose',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Kneeling Side Plank', sanskritName: 'Jānu Vasiṣṭhāsana', level: 'Beginner', intensity: 3, cues: 'Drop lower knee to floor for support while extending top arm and leg into alignment.' },
                     standard_1: { category: 'standard', englishName: 'Side Plank (Standard)', sanskritName: 'Vasiṣṭhāsana', level: 'Intermediate', intensity: 6, cues: 'Stack feet and shoulders over bottom wrist, driving hips high away from floor.' },
@@ -1979,7 +1938,6 @@
                 target: 'Core/Abs',
                 prereq: 'Seated Balance',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Half Boat Pose (Bent Knees)', sanskritName: 'Ardha Nāvāsana', level: 'Beginner', intensity: 3, cues: 'Balance on sit bones, knees bent 90 degrees parallel to floor, hands supporting behind thighs.' },
                     regressed_2: { category: 'regressed', englishName: 'Supported Boat (Hands Grounded)', sanskritName: 'Sālamba Nāvāsana', level: 'Beginner', intensity: 3, cues: 'Place palms on mat behind hips to assist balance while lifting shins parallel to ground.' },
@@ -1996,7 +1954,6 @@
                 target: 'Core/Abs',
                 prereq: 'Seated Twist',
                 activeModifier: 'standard_1',
-                mastered: true,
                 modifiers: {
                     regressed_1: { category: 'regressed', englishName: 'Seated Twist (Bottom Leg Straight)', sanskritName: 'Saraḷa Ardha Matsyendrāsana', level: 'Beginner', intensity: 3, cues: 'Keep bottom leg extended straight on mat while stepping top foot over thigh to twist.' },
                     regressed_2: { category: 'regressed', englishName: 'Seated Hugging Twist', sanskritName: 'Sūkṣma Ardha Matsyendrāsana', level: 'Beginner', intensity: 3, cues: 'Hug lifted knee with opposite arm elbow crease instead of hooking arm outside leg.' },
@@ -2986,7 +2943,6 @@
                     target,
                     prereq,
                     activeModifier: 'standard_1',
-                    mastered: false,
                     isCustom: true,
                     modifiers: {
                         standard_1: {
@@ -3256,9 +3212,6 @@
                                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                                         </button>
                                     
-                                    <button onclick="togglePoseMastery('${pose.id}')" class="p-1 rounded-lg text-slate-400 hover:text-amber-400 transition">
-                                        <i data-lucide="check-circle" class="w-5 h-5 ${pose.mastered ? 'text-teal-400 fill-teal-400/20' : 'text-slate-600'}"></i>
-                                    </button>
                                 </div>
                             </div>
 
@@ -4045,19 +3998,6 @@
             }
         }
 
-        function togglePoseMastery(poseId) {
-            const pose = YOGA_DATABASE.find(p => p.id === poseId);
-            if (!pose) return;
-
-            pose.mastered = !pose.mastered;
-            renderSkillTrees(currentFamilyFilter);
-
-            if (selectedInspectorPoseId === poseId) {
-                updateInspectorMasteryBtn(pose.mastered);
-            }
-            showToastNotification(`Mastery status updated for ${pose.englishName}`, 'info');
-        }
-
         // ================= YOGA POSE INSPECTOR MODAL =================
         function openInspectorModal(poseId) {
             const pose = YOGA_DATABASE.find(p => p.id === poseId);
@@ -4198,7 +4138,6 @@
                 modifiersContainer.innerHTML = categoriesHtml;
             }
 
-            updateInspectorMasteryBtn(pose.mastered);
             document.getElementById('inspector-modal').classList.remove('hidden');
             lucide.createIcons();
         }
@@ -4206,24 +4145,6 @@
         function closeInspectorModal() {
             document.getElementById('inspector-modal').classList.add('hidden');
             selectedInspectorPoseId = null;
-        }
-
-        function updateInspectorMasteryBtn(mastered) {
-            const btn = document.getElementById('insp-mastery-btn');
-            if (!btn) return;
-            if (mastered) {
-                btn.className = "px-4 py-2 rounded-xl text-xs font-bold bg-teal-500 text-slate-950 transition";
-                btn.innerText = "Mastered ✓";
-            } else {
-                btn.className = "px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition";
-                btn.innerText = "Mark as Mastered";
-            }
-        }
-
-        function toggleInspectorMastery() {
-            if (selectedInspectorPoseId) {
-                togglePoseMastery(selectedInspectorPoseId);
-            }
         }
 
         // ================= UNIVERSAL YOGA POSE MODIFIER CREATION & EDITING =================
