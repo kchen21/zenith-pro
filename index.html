@@ -191,7 +191,7 @@
     <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 space-y-6">
 
         <!-- Banner Note: Data Persistence Guide -->
-        <div class="glass-panel p-4 rounded-2xl border-amber-500/30 bg-amber-950/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+        <div id="data-guide-banner" class="relative glass-panel p-4 pr-12 sm:pr-4 rounded-2xl border-amber-500/30 bg-amber-950/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
             <div class="flex items-center space-x-3">
                 <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30 flex-shrink-0">
                     <i data-lucide="hard-drive-upload" class="w-4 h-4"></i>
@@ -201,9 +201,14 @@
                     <p class="text-slate-400">Custom poses, modifiers, drills, and progress are preserved in your session. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
                 </div>
             </div>
-            <button onclick="openDataGuideModal()" class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold transition whitespace-nowrap self-end sm:self-center">
-                Learn How
-            </button>
+            <div class="flex items-center gap-2 self-end sm:self-center">
+                <button onclick="openDataGuideModal()" class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 font-bold transition whitespace-nowrap">
+                    Learn How
+                </button>
+                <button onclick="dismissDataGuideBanner()" aria-label="Dismiss message" class="absolute top-2 right-2 sm:static min-h-[32px] min-w-[32px] rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition flex items-center justify-center">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
         </div>
 
         <!-- ================= SKILL TREES TAB ================= -->
@@ -2792,6 +2797,22 @@
             if (item.tiedPoseId) return [item.tiedPoseId];
             return [];
         }
+
+        // ================= DATA GUIDE BANNER DISMISS =================
+        function dismissDataGuideBanner() {
+            const el = document.getElementById('data-guide-banner');
+            if (el) el.remove();
+            try { localStorage.setItem('zenith_hide_data_banner', '1'); } catch (e) {}
+        }
+
+        (function () {
+            try {
+                if (localStorage.getItem('zenith_hide_data_banner') === '1') {
+                    const el = document.getElementById('data-guide-banner');
+                    if (el) el.remove();
+                }
+            } catch (e) {}
+        })();
 
         // ================= DATA GUIDE MODAL HANDLERS =================
         function openDataGuideModal() {
