@@ -553,7 +553,7 @@
 
     <!-- MODAL: ADD / EDIT CUSTOM YOGA POSE MODAL -->
     <div id="custom-pose-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-pose-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="sparkles" class="w-5 h-5 text-teal-400"></i>
@@ -675,22 +675,23 @@
                     </div>
                 </div>
 
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-800">
-                    <button type="button" onclick="closeCustomPoseModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/25 transition">
-                        Save Asana
-                    </button>
-                </div>
-            </form>
+</form>
+
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-end gap-3 bg-slate-900/60">
+                <button type="button" onclick="closeCustomPoseModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    Cancel
+                </button>
+                <button type="submit" form="custom-pose-form" class="px-5 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/25 transition">
+                    Save Asana
+                </button>
+            </div>
         </div>
     </div>
 
 
     <!-- MODAL: YOGA EXERCISE INSPECTOR & MODIFIER MODAL -->
     <div id="inspector-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <div>
                     <div class="flex items-center space-x-2">
@@ -700,14 +701,9 @@
                     <h3 id="insp-title" class="text-xl font-extrabold text-white mt-1">Asana Detail</h3>
                     <div id="insp-sanskrit" class="text-xs font-semibold italic text-teal-400 tracking-wide mt-0.5">Sanskrit Transliteration</div>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <div id="insp-custom-actions" class="flex items-center space-x-1.5">
-                        <!-- Edit / Delete custom pose buttons injected here -->
-                    </div>
-                    <button onclick="closeInspectorModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
-                        <i data-lucide="x" class="w-5 h-5"></i>
-                    </button>
-                </div>
+                <button onclick="closeInspectorModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
             </div>
 
             <div class="p-6 overflow-y-auto space-y-6 flex-1">
@@ -780,6 +776,14 @@
                 </div>
             </div>
 
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/60">
+                <div id="insp-custom-actions" class="flex flex-wrap items-center gap-2">
+                    <!-- Edit / Delete asana buttons injected here -->
+                </div>
+                <button onclick="closeInspectorModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition whitespace-nowrap ml-auto">
+                    Close Inspector
+                </button>
+            </div>
         </div>
     </div>
 
@@ -858,7 +862,7 @@
 
     <!-- MODAL: BODYWEIGHT EXERCISE INSPECTOR MODAL -->
     <div id="bw-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <div>
                     <span id="bw-modal-target" class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">TARGET MUSCLE</span>
@@ -947,11 +951,11 @@
                 </div>
             </div>
 
-            <div class="p-5 border-t border-slate-800 flex items-center justify-between bg-slate-900/60">
-                <div id="bw-modal-custom-actions" class="flex items-center space-x-2">
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/60">
+                <div id="bw-modal-custom-actions" class="flex flex-wrap items-center gap-2">
                     <!-- Dynamic Edit/Delete buttons if custom drill -->
                 </div>
-                <button onclick="closeBWModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition">
+                <button onclick="closeBWModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition whitespace-nowrap ml-auto">
                     Close Inspector
                 </button>
             </div>
@@ -959,99 +963,9 @@
     </div>
 
 
-    <!-- MODAL: ADD/EDIT CUSTOM ASANA MODAL -->
-    <div id="custom-pose-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
-            <div class="p-5 border-b border-slate-800 flex items-center justify-between">
-                <h3 id="custom-pose-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
-                    <i data-lucide="sparkles" class="w-5 h-5 text-teal-400"></i>
-                    <span>Add Custom Asana</span>
-                </h3>
-                <button onclick="closeCustomPoseModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <form id="custom-pose-form" onsubmit="saveCustomPose(event)" class="p-6 overflow-y-auto space-y-4 flex-1">
-                <input type="hidden" id="custom-pose-id">
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">English Name *</label>
-                    <input type="text" id="custom-pose-english" required placeholder="e.g. Fallen Angel Pose" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Sanskrit Name (Optional)</label>
-                    <input type="text" id="custom-pose-sanskrit" placeholder="e.g. Devadūutāsana" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Asana Category *</label>
-                        <select id="custom-pose-category" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                            <option value="Restorative & Foundations">Restorative & Foundations</option>
-                            <option value="Standing & Balance">Standing & Balance</option>
-                            <option value="Inversions & Arm Balances">Inversions & Arm Balances</option>
-                            <option value="Backbends & Heart Openers">Backbends & Heart Openers</option>
-                            <option value="Hip Openers & Seated">Hip Openers & Seated</option>
-                            <option value="Core & Twists">Core & Twists</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Target Muscle Group *</label>
-                        <select id="custom-pose-target" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                            <option value="Head & Crown">Head & Crown</option>
-                            <option value="Shoulders">Shoulders</option>
-                            <option value="Chest">Chest</option>
-                            <option value="Back">Back</option>
-                            <option value="Core/Abs">Core/Abs</option>
-                            <option value="Hips">Hips</option>
-                            <option value="Quadriceps">Quadriceps</option>
-                            <option value="Hamstrings">Hamstrings</option>
-                            <option value="Calves">Calves</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Prerequisite Skill / Asana</label>
-                        <input type="text" id="custom-pose-prereq" placeholder="e.g. Side Crow Pose" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Default Standard Level</label>
-                        <select id="custom-pose-level" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
-                            <option value="Beginner">Beginner</option>
-                            <option value="Intermediate" selected>Intermediate</option>
-                            <option value="Advanced">Advanced</option>
-                            <option value="Master">Master</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Form Cues & Technical Instructions *</label>
-                    <textarea id="custom-pose-cues" rows="3" required placeholder="Describe alignment, breath cues, and entry instructions..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none"></textarea>
-                </div>
-
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-800">
-                    <button type="button" onclick="closeCustomPoseModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/25 transition">
-                        Save Asana
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-
     <!-- MODAL: ADD / EDIT CUSTOM BODYWEIGHT DRILL -->
     <div id="custom-bw-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-bw-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="dumbbell" class="w-5 h-5 text-rose-400"></i>
@@ -1127,21 +1041,22 @@
                     <textarea id="custom-bw-tips" rows="2" required placeholder="Keep core engaged and avoid lower back arching." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-rose-400 focus:outline-none"></textarea>
                 </div>
 
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-800">
-                    <button type="button" onclick="closeCustomBWModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-rose-500/25 transition">
-                        Save Drill
-                    </button>
-                </div>
-            </form>
+</form>
+
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-end gap-3 bg-slate-900/60">
+                <button type="button" onclick="closeCustomBWModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    Cancel
+                </button>
+                <button type="submit" form="custom-bw-form" class="px-5 py-2 bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-rose-500/25 transition">
+                    Save Drill
+                </button>
+            </div>
         </div>
     </div>
     
     <!-- MODAL: DEDICATED STRETCH INSPECTOR MODAL -->
     <div id="stretch-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <div>
                     <span id="stretch-modal-target" class="text-[10px] font-bold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">TARGET MUSCLE</span>
@@ -1230,11 +1145,11 @@
                 </div>
             </div>
 
-            <div class="p-5 border-t border-slate-800 flex items-center justify-between bg-slate-900/60">
-                <div id="stretch-modal-custom-actions" class="flex items-center space-x-2">
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-900/60">
+                <div id="stretch-modal-custom-actions" class="flex flex-wrap items-center gap-2">
                     <!-- Dynamic Edit/Delete buttons if custom -->
                 </div>
-                <button onclick="closeStretchModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition">
+                <button onclick="closeStretchModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition whitespace-nowrap ml-auto">
                     Close Inspector
                 </button>
             </div>
@@ -1244,7 +1159,7 @@
 
     <!-- MODAL: ADD/EDIT CUSTOM STRETCH MODAL -->
     <div id="custom-stretch-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-stretch-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="activity" class="w-5 h-5 text-sky-400"></i>
@@ -1321,15 +1236,16 @@
                     <textarea id="custom-stretch-tips" rows="2" required placeholder="Keep heel grounded; stop immediately if sharp knee pain is felt." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-sky-400 focus:outline-none"></textarea>
                 </div>
 
-                <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-800">
-                    <button type="button" onclick="closeCustomStretchModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
-                        Cancel
-                    </button>
-                    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-sky-500/25 transition">
-                        Save Stretch
-                    </button>
-                </div>
-            </form>
+</form>
+
+            <div class="flex-shrink-0 p-4 sm:p-5 border-t border-slate-800 flex flex-wrap items-center justify-end gap-3 bg-slate-900/60">
+                <button type="button" onclick="closeCustomStretchModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+                    Cancel
+                </button>
+                <button type="submit" form="custom-stretch-form" class="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-sky-500/25 transition">
+                    Save Stretch
+                </button>
+            </div>
         </div>
     </div>
 
@@ -3227,7 +3143,7 @@
                                 </div>
                                 <div class="flex items-center space-x-1">
                                     <button onclick="openCustomPoseModal('${pose.id}')" title="Edit Asana" class="p-1 text-slate-400 hover:text-teal-300 transition">
-                                        <i data-lucide="edit-3" class="w-4 h-4"></i>
+                                        <i data-lucide="edit-2" class="w-4 h-4"></i>
                                     </button>
                                                                             <button onclick="deleteCustomPose('${pose.id}', event)" title="Delete Asana" class="p-1 text-slate-400 hover:text-red-400 transition">
                                             <i data-lucide="trash-2" class="w-4 h-4"></i>
@@ -4074,7 +3990,7 @@
             if (customActions) {
                 customActions.innerHTML = `
                     <button onclick="openCustomPoseModal('${pose.id}'); closeInspectorModal();" class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition flex items-center space-x-1">
-                        <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                        <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
                         <span>Edit Asana</span>
                     </button>
                                             <button onclick="deleteCustomPose('${pose.id}')" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
