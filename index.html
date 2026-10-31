@@ -921,7 +921,7 @@
                             <p class="text-[10px] text-slate-400">Maintain core tension and controlled breathing.</p>
                             <label class="mt-1.5 flex items-center gap-1.5 text-[10px] text-slate-400">
                                 <span>Set time:</span>
-                                <input type="number" id="bw-timer-duration" min="5" max="3600" step="5" value="45" inputmode="numeric" onchange="setBWTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-rose-400 focus:outline-none">
+                                <input type="number" id="bw-timer-duration" min="0" max="3600" step="1" value="45" inputmode="numeric" onchange="setBWTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-rose-400 focus:outline-none">
                                 <span>sec</span>
                             </label>
                         </div>
@@ -1204,7 +1204,7 @@
                             <p class="text-[10px] text-slate-400">Maintain deep diaphragmatic breathing throughout the hold.</p>
                             <label class="mt-1.5 flex items-center gap-1.5 text-[10px] text-slate-400">
                                 <span>Set time:</span>
-                                <input type="number" id="stretch-timer-duration" min="5" max="3600" step="5" value="30" inputmode="numeric" onchange="setStretchTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-sky-400 focus:outline-none">
+                                <input type="number" id="stretch-timer-duration" min="0" max="3600" step="1" value="30" inputmode="numeric" onchange="setStretchTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-sky-400 focus:outline-none">
                                 <span>sec</span>
                             </label>
                         </div>
@@ -3548,7 +3548,7 @@
             if (!bw) return;
 
             selectedBWId = exerciseId;
-            bwTimerSeconds = bw.defaultDurationSecs || 45;
+            bwTimerSeconds = bw.defaultDurationSecs ?? 45;
 
             const tiedPoseIds = getTiedPoseIds(bw);
 
@@ -3634,7 +3634,7 @@
             const bw = BODYWEIGHT_EXERCISES_DATABASE.find(b => b.id === selectedBWId);
             let secs = Math.round(parseInt(value, 10));
             if (!bw || !isFinite(secs)) { resetBWHoldTimer(); return; }
-            secs = Math.min(3600, Math.max(5, secs));
+            secs = Math.min(3600, Math.max(0, secs));
             bw.defaultDurationSecs = secs;
             resetBWHoldTimer();
             renderBWExercisesList();
@@ -3645,7 +3645,7 @@
             clearInterval(bwTimerInterval);
             isBWTimerRunning = false;
             const bw = BODYWEIGHT_EXERCISES_DATABASE.find(b => b.id === selectedBWId);
-            bwTimerSeconds = bw ? (bw.defaultDurationSecs || 45) : 45;
+            bwTimerSeconds = bw ? (bw.defaultDurationSecs ?? 45) : 45;
 
             const timerNum = document.getElementById('bw-timer-num');
             if (timerNum) timerNum.innerText = bwTimerSeconds;
@@ -3911,7 +3911,7 @@
             if (!stretch) return;
 
             selectedStretchId = stretchId;
-            stretchTimerSeconds = stretch.durationSecs || 30;
+            stretchTimerSeconds = stretch.durationSecs ?? 30;
 
             const tiedPoseIds = getTiedPoseIds(stretch);
 
@@ -3997,7 +3997,7 @@
             const stretch = TARGETED_STRETCHES_DATABASE.find(s => s.id === selectedStretchId);
             let secs = Math.round(parseInt(value, 10));
             if (!stretch || !isFinite(secs)) { resetStretchHoldTimer(); return; }
-            secs = Math.min(3600, Math.max(5, secs));
+            secs = Math.min(3600, Math.max(0, secs));
             stretch.durationSecs = secs;
             resetStretchHoldTimer();
             const timeEl = document.getElementById('stretch-modal-time');
