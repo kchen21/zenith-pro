@@ -148,7 +148,7 @@
                         <span class="font-black text-base sm:text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-emerald-400 to-rose-300">ZENITH</span>
                         <span class="text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">PRO</span>
                     </div>
-                    <p class="hidden sm:block text-[10px] text-slate-400 tracking-wide font-medium">EXPANDED YOGA, STRETCHES & BODYWEIGHT ENGINE</p>
+                    <p class="hidden sm:block text-[10px] text-slate-400 tracking-wide font-medium">MOVE HIGHER. STRETCH DEEPER.</p>
                 </div>
             </div>
 
@@ -156,15 +156,15 @@
             <nav class="flex items-center space-x-1 sm:space-x-2 overflow-x-auto py-1 max-w-full no-scrollbar order-3 md:order-2 w-full md:w-auto">
                 <button onclick="switchTab('skilltrees')" id="nav-skilltrees" class="nav-btn active px-3 py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center space-x-2 transition text-teal-400 bg-teal-500/10 border border-teal-500/30">
                     <i data-lucide="git-fork" class="w-4 h-4"></i>
-                    <span>Skill Trees</span>
+                    <span>Asanas</span>
                 </button>
                 <button onclick="switchTab('bodyweight')" id="nav-bodyweight" class="nav-btn px-3 py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center space-x-2 transition text-slate-400 hover:text-slate-200 hover:bg-slate-800/60">
                     <i data-lucide="dumbbell" class="w-4 h-4"></i>
-                    <span>Bodyweight Drills</span>
+                    <span>Drills</span>
                 </button>
                 <button onclick="switchTab('stretches')" id="nav-stretches" class="nav-btn px-3 py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center space-x-2 transition text-slate-400 hover:text-slate-200 hover:bg-slate-800/60">
                     <i data-lucide="activity" class="w-4 h-4"></i>
-                    <span>Target Stretches</span>
+                    <span>Stretches</span>
                 </button>
                 <button onclick="switchTab('anatomy')" id="nav-anatomy" class="nav-btn px-3 py-2 rounded-lg text-xs md:text-sm font-semibold flex items-center space-x-2 transition text-slate-400 hover:text-slate-200 hover:bg-slate-800/60">
                     <i data-lucide="user-check" class="w-4 h-4"></i>
@@ -286,7 +286,7 @@
                     <div class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2.5">
                         <div class="relative flex-1 min-w-[200px]">
                             <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-                            <input type="text" id="bw-search-input" onkeyup="filterBWExercises()" placeholder="Search bodyweight drill..." class="w-full h-10 bg-slate-900/90 border border-slate-700 rounded-xl pl-9 pr-3 text-xs text-white focus:border-rose-400 focus:outline-none">
+                            <input type="text" id="bw-search-input" onkeyup="filterBWExercises()" placeholder="Search drills..." class="w-full h-10 bg-slate-900/90 border border-slate-700 rounded-xl pl-9 pr-3 text-xs text-white focus:border-rose-400 focus:outline-none">
                         </div>
 
                         <select id="bw-pose-filter" onchange="filterBWExercises()" class="h-10 w-full sm:w-52 bg-slate-900 border border-slate-700 rounded-xl px-3 text-xs text-white focus:border-rose-400 focus:outline-none">
@@ -397,7 +397,7 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-white text-sm">Interactive Target Display Mode</h4>
-                        <p class="text-xs text-slate-400">Choose whether clicking muscles shows Asanas, Supplemental Bodyweight Exercises, or Target Stretches.</p>
+                        <p class="text-xs text-slate-400">Choose whether clicking muscles shows Asanas, Drills, or Stretches.</p>
                     </div>
                 </div>
 
@@ -406,10 +406,10 @@
                         Asanas
                     </button>
                     <button onclick="setAnatomyDisplayMode('bodyweight')" id="btn-mode-bodyweight" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">
-                        Bodyweight
+                        Drills
                     </button>
                     <button onclick="setAnatomyDisplayMode('stretches')" id="btn-mode-stretches" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">
-                        Target Stretches
+                        Stretches
                     </button>
                 </div>
             </div>
@@ -639,7 +639,7 @@
                 <div>
                     <label class="block text-xs font-semibold text-sky-400 mb-1 flex items-center space-x-1">
                         <i data-lucide="activity" class="w-3.5 h-3.5"></i>
-                        <span>Tied Target Stretches & Mobility</span>
+                        <span>Tied Stretches & Mobility</span>
                     </label>
                     <div id="custom-pose-stretch-selector" class="flex flex-wrap gap-1.5 p-2 bg-slate-900/90 border border-slate-700 rounded-xl max-h-32 overflow-y-auto">
                         <!-- Injected by JS -->
@@ -730,7 +730,7 @@
                     <div class="flex items-center justify-between">
                         <h4 class="font-bold text-white text-sm flex items-center space-x-2">
                             <i data-lucide="activity" class="w-4 h-4 text-sky-400"></i>
-                            <span>Tied Target Stretches & Mobility Drills</span>
+                            <span>Tied Stretches & Mobility Drills</span>
                         </h4>
                         <span class="text-[10px] font-extrabold text-sky-300 uppercase tracking-wider px-2 py-0.5 rounded bg-sky-500/20 border border-sky-500/30">Range of Motion</span>
                     </div>
@@ -1055,7 +1055,7 @@
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-bw-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="dumbbell" class="w-5 h-5 text-rose-400"></i>
-                    <span>Add Custom Bodyweight Drill</span>
+                    <span>Add Custom Drill</span>
                 </h3>
                 <button onclick="closeCustomBWModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -1248,7 +1248,7 @@
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-stretch-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="activity" class="w-5 h-5 text-sky-400"></i>
-                    <span>Add Custom Target Stretch</span>
+                    <span>Add Custom Stretch</span>
                 </h3>
                 <button onclick="closeCustomStretchModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -3204,7 +3204,7 @@
                             crossLinksHtml += `
                                 <div class="p-2 rounded-xl bg-sky-950/30 border border-sky-500/20 flex items-center justify-between">
                                     <div class="truncate mr-2">
-                                        <span class="text-[8px] uppercase font-extrabold text-sky-400 block">Target Stretch</span>
+                                        <span class="text-[8px] uppercase font-extrabold text-sky-400 block">Stretch</span>
                                         <span class="text-xs font-semibold text-slate-200 truncate block">${firstStr.title} ${extraStrCount > 0 ? `(+${extraStrCount})` : ''}</span>
                                     </div>
                                     <button onclick="openStretchModal('${firstStr.id}')" class="px-2 py-1 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/30 text-[10px] font-bold transition flex items-center space-x-1 whitespace-nowrap">
@@ -3343,8 +3343,8 @@
                 container.innerHTML = `
                     <div class="col-span-full text-center py-12 glass-panel rounded-2xl border-slate-800">
                         <i data-lucide="dumbbell" class="w-8 h-8 text-slate-500 mx-auto mb-2"></i>
-                        <p class="text-sm font-semibold text-slate-300">No bodyweight exercises match your selected filters.</p>
-                        <p class="text-xs text-slate-500 mt-1">Try switching target muscles, selecting another asana, or creating a custom exercise.</p>
+                        <p class="text-sm font-semibold text-slate-300">No drills match your selected filters.</p>
+                        <p class="text-xs text-slate-500 mt-1">Try switching target muscles, selecting another asana, or creating a custom drill.</p>
                         <button onclick="openCustomBWModal()" class="mt-4 px-4 py-2 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 text-slate-950 font-bold text-xs inline-flex items-center space-x-1.5">
                             <i data-lucide="plus" class="w-4 h-4"></i>
                             <span>Create Custom Drill</span>
@@ -3441,7 +3441,7 @@
                 const bw = BODYWEIGHT_EXERCISES_DATABASE.find(b => b.id === exerciseId);
                 if (!bw) return;
 
-                titleEl.querySelector('span').innerText = 'Edit Custom Bodyweight Drill';
+                titleEl.querySelector('span').innerText = 'Edit Custom Drill';
                 document.getElementById('custom-bw-id').value = bw.id;
                 document.getElementById('custom-bw-title').value = bw.title;
                 customBWSelectedPoseIds = [...getTiedPoseIds(bw)];
@@ -3453,7 +3453,7 @@
                 document.getElementById('custom-bw-steps').value = Array.isArray(bw.steps) ? bw.steps.join('\n') : bw.steps;
                 document.getElementById('custom-bw-tips').value = bw.tips;
             } else {
-                titleEl.querySelector('span').innerText = 'Add Custom Bodyweight Drill';
+                titleEl.querySelector('span').innerText = 'Add Custom Drill';
                 form.reset();
                 document.getElementById('custom-bw-id').value = '';
                 customBWSelectedPoseIds = YOGA_DATABASE.length > 0 ? [YOGA_DATABASE[0].id] : [];
@@ -3502,7 +3502,7 @@
                         tips,
                         isCustom: true
                     };
-                    showToastNotification('Custom bodyweight drill updated!', 'success');
+                    showToastNotification('Custom drill updated!', 'success');
                 }
             } else {
                 const newBW = {
@@ -3520,7 +3520,7 @@
                     isCustom: true
                 };
                 BODYWEIGHT_EXERCISES_DATABASE.push(newBW);
-                showToastNotification('Custom bodyweight drill created!', 'success');
+                showToastNotification('Custom drill created!', 'success');
             }
 
             closeCustomBWModal();
@@ -3538,7 +3538,7 @@
             const bw = BODYWEIGHT_EXERCISES_DATABASE[index];
             if (confirm(`Are you sure you want to delete "${bw.title}"?`)) {
                 BODYWEIGHT_EXERCISES_DATABASE.splice(index, 1);
-                showToastNotification('Bodyweight drill deleted.', 'success');
+                showToastNotification('Drill deleted.', 'success');
 
                 if (selectedBWId === exerciseId) {
                     closeBWModal();
@@ -3631,7 +3631,7 @@
                         isBWTimerRunning = false;
                         btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i><span>Set Complete</span>';
                         indicator.classList.remove('breath-pulse');
-                        showToastNotification('Bodyweight set complete! Excellent power output.', 'success');
+                        showToastNotification('Set complete! Excellent power output.', 'success');
                     }
                 }, 1000);
             }
@@ -3804,7 +3804,7 @@
                 const stretch = TARGETED_STRETCHES_DATABASE.find(s => s.id === stretchId);
                 if (!stretch) return;
 
-                titleEl.querySelector('span').innerText = 'Edit Custom Target Stretch';
+                titleEl.querySelector('span').innerText = 'Edit Custom Stretch';
                 document.getElementById('custom-stretch-id').value = stretch.id;
                 document.getElementById('custom-stretch-title').value = stretch.title;
                 customStretchSelectedPoseIds = [...getTiedPoseIds(stretch)];
@@ -3816,7 +3816,7 @@
                 document.getElementById('custom-stretch-steps').value = Array.isArray(stretch.steps) ? stretch.steps.join('\n') : stretch.steps;
                 document.getElementById('custom-stretch-tips').value = stretch.tips;
             } else {
-                titleEl.querySelector('span').innerText = 'Add Custom Target Stretch';
+                titleEl.querySelector('span').innerText = 'Add Custom Stretch';
                 form.reset();
                 document.getElementById('custom-stretch-id').value = '';
                 customStretchSelectedPoseIds = YOGA_DATABASE.length > 0 ? [YOGA_DATABASE[0].id] : [];
@@ -4125,7 +4125,7 @@
                         </div>
                     `).join('');
                 } else {
-                    stretchSection.innerHTML = `<p class="text-xs text-slate-400 italic">No target stretches linked directly to this asana.</p>`;
+                    stretchSection.innerHTML = `<p class="text-xs text-slate-400 italic">No stretches linked directly to this asana.</p>`;
                 }
             }
 
@@ -4312,10 +4312,10 @@
                     badge.innerText = 'Mode: Asanas';
                     badge.className = 'text-xs text-teal-400 font-bold uppercase tracking-wider';
                 } else if (mode === 'bodyweight') {
-                    badge.innerText = 'Mode: Supplemental Bodyweight';
+                    badge.innerText = 'Mode: Drills';
                     badge.className = 'text-xs text-rose-400 font-bold uppercase tracking-wider';
                 } else {
-                    badge.innerText = 'Mode: Target Stretches';
+                    badge.innerText = 'Mode: Stretches';
                     badge.className = 'text-xs text-sky-400 font-bold uppercase tracking-wider';
                 }
             }
@@ -4454,7 +4454,7 @@
             } else if (anatomyDisplayMode === 'bodyweight') {
                 const items = BODYWEIGHT_EXERCISES_DATABASE.filter(b => selectedAnatomyTarget === 'All' || b.target === selectedAnatomyTarget);
                 if (items.length === 0) {
-                    container.innerHTML = `<p class="col-span-full text-xs text-slate-400 italic">No bodyweight drills targeting ${selectedAnatomyTarget}.</p>`;
+                    container.innerHTML = `<p class="col-span-full text-xs text-slate-400 italic">No drills targeting ${selectedAnatomyTarget}.</p>`;
                     return;
                 }
                 container.innerHTML = items.map(b => `
