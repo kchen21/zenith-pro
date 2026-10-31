@@ -197,8 +197,8 @@
                     <i data-lucide="hard-drive-upload" class="w-4 h-4"></i>
                 </div>
                 <div>
-                    <span class="font-bold text-amber-300 block">Managing Your Custom Poses & Training Data</span>
-                    <p class="text-slate-400">Custom poses, modifiers, drills, and progress are preserved in your session. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
+                    <span class="font-bold text-amber-300 block">Managing Your Custom Asanas & Training Data</span>
+                    <p class="text-slate-400">Custom asanas, modifiers, drills, and progress are preserved in your session. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
                 </div>
             </div>
             <div class="flex items-center gap-2 self-end sm:self-center">
@@ -222,7 +222,7 @@
                         <span>Asana Skill Progression Trees</span>
                     </h2>
                     <p class="text-xs md:text-sm text-slate-400 mt-1">
-                        Explore <span id="stat-pose-count" class="text-teal-300 font-bold">40+</span> yoga postures across all categories. Select, edit, or remove modifiers (<span class="text-emerald-300 font-medium">Regressed</span>, <span class="text-teal-300 font-medium">Standard</span>, <span class="text-purple-300 font-medium">Advanced</span>, or <span class="text-amber-300 font-medium">Custom</span>) with linked <span class="text-rose-300 font-medium">Calisthenics Drills</span> & <span class="text-sky-300 font-medium">Mobility Stretches</span>.
+                        Explore <span id="stat-pose-count" class="text-teal-300 font-bold">40+</span> asanas across all categories. Select, edit, or remove modifiers (<span class="text-emerald-300 font-medium">Regressed</span>, <span class="text-teal-300 font-medium">Standard</span>, <span class="text-purple-300 font-medium">Advanced</span>, or <span class="text-amber-300 font-medium">Custom</span>) with linked <span class="text-rose-300 font-medium">Calisthenics Drills</span> & <span class="text-sky-300 font-medium">Mobility Stretches</span>.
                     </p>
                 </div>
                 <!-- Search & Category Filters -->
@@ -230,11 +230,11 @@
                     <div class="flex items-center gap-2">
                         <div class="relative flex-1 md:w-64">
                             <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
-                            <input type="text" id="pose-search-input" onkeyup="filterPoseSearch()" placeholder="Search pose or sanskrit..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:border-teal-400 focus:outline-none">
+                            <input type="text" id="pose-search-input" onkeyup="filterPoseSearch()" placeholder="Search asana or sanskrit..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl pl-9 pr-3 py-1.5 text-xs text-white focus:border-teal-400 focus:outline-none">
                         </div>
                         <button onclick="openCustomPoseModal()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs shadow-md shadow-teal-500/20 transition flex items-center space-x-1.5 whitespace-nowrap">
                             <i data-lucide="plus" class="w-4 h-4"></i>
-                            <span>Add Custom Pose</span>
+                            <span>Add Custom Asana</span>
                         </button>
                     </div>
                     <div class="flex flex-wrap gap-2" id="family-filter-container">
@@ -266,7 +266,7 @@
                         <span>Supplemental Bodyweight & Calisthenics Exercises</span>
                     </h2>
                     <p class="text-xs md:text-sm text-slate-400 mt-1">
-                        Specific strength, isometric conditioning, and dynamic calisthenics drills engineered to build prerequisite power across all asana families.
+                        Specific strength, isometric conditioning, and dynamic calisthenics drills paired with the asanas they complement: each drill builds the strength an asana demands, and each asana puts that strength to work.
                     </p>
                 </div>
 
@@ -278,7 +278,7 @@
                     </div>
                     
                     <select id="bw-pose-filter" onchange="filterBWExercises()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-rose-400 focus:outline-none max-w-[180px]">
-                        <option value="All">All Tied Poses</option>
+                        <option value="All">All Paired Asanas</option>
                     </select>
 
                     <select id="bw-level-filter" onchange="filterBWExercises()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-rose-400 focus:outline-none">
@@ -325,7 +325,7 @@
                         <span>Targeted Muscle Stretches</span>
                     </h2>
                     <p class="text-xs md:text-sm text-slate-400 mt-1">
-                        Isolated static, dynamic, and PNF mobility stretches categorized by muscle group and tied directly to prerequisite yoga postures.
+                        Isolated static, dynamic, and PNF mobility stretches categorized by muscle group and paired with the asanas they complement: each stretch supports its asanas, and each asana deepens the stretch.
                     </p>
                 </div>
 
@@ -337,7 +337,7 @@
                     </div>
 
                     <select id="stretch-pose-filter" onchange="filterStretches()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-sky-400 focus:outline-none max-w-[180px]">
-                        <option value="All">All Tied Poses</option>
+                        <option value="All">All Paired Asanas</option>
                     </select>
 
                     <select id="stretch-level-filter" onchange="filterStretches()" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:border-sky-400 focus:outline-none">
@@ -386,13 +386,13 @@
                     </div>
                     <div>
                         <h4 class="font-bold text-white text-sm">Interactive Target Display Mode</h4>
-                        <p class="text-xs text-slate-400">Choose whether clicking muscles shows Yoga Poses, Supplemental Bodyweight Exercises, or Target Stretches.</p>
+                        <p class="text-xs text-slate-400">Choose whether clicking muscles shows Asanas, Supplemental Bodyweight Exercises, or Target Stretches.</p>
                     </div>
                 </div>
 
                 <div class="flex items-center p-1 bg-slate-900/90 rounded-xl border border-slate-800 text-xs font-bold">
                     <button onclick="setAnatomyDisplayMode('poses')" id="btn-mode-poses" class="px-3 py-1.5 rounded-lg bg-teal-500 text-slate-950 transition">
-                        Yoga Poses
+                        Asanas
                     </button>
                     <button onclick="setAnatomyDisplayMode('bodyweight')" id="btn-mode-bodyweight" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition">
                         Bodyweight
@@ -525,7 +525,7 @@
                 <div class="lg:col-span-2 glass-panel p-6 rounded-2xl border-slate-800">
                     <div class="flex items-center justify-between mb-6">
                         <div>
-                            <span id="anatomy-mode-badge" class="text-xs text-teal-400 font-bold uppercase tracking-wider">Mode: Yoga Poses</span>
+                            <span id="anatomy-mode-badge" class="text-xs text-teal-400 font-bold uppercase tracking-wider">Mode: Asanas</span>
                             <h3 id="anatomy-selected-title" class="text-xl font-extrabold text-white">Target Area: All Regions</h3>
                         </div>
                         <button onclick="selectAnatomyPart('All')" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium">Reset Selection</button>
@@ -546,7 +546,7 @@
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-pose-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="sparkles" class="w-5 h-5 text-teal-400"></i>
-                    <span>Add Custom Yoga Pose</span>
+                    <span>Add Custom Asana</span>
                 </h3>
                 <button onclick="closeCustomPoseModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -558,7 +558,7 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Pose Name (English) *</label>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Asana Name (English) *</label>
                         <input type="text" id="custom-pose-english" required placeholder="e.g. Compass Pose" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
                     </div>
                     <div>
@@ -597,7 +597,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Prerequisite Skill / Pose Requirement</label>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1">Prerequisite Skill / Asana Requirement</label>
                     <input type="text" id="custom-pose-prereq" placeholder="e.g. Lizard Lunge & Seated Twist" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
                 </div>
 
@@ -669,7 +669,7 @@
                         Cancel
                     </button>
                     <button type="submit" class="px-5 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/25 transition">
-                        Save Pose
+                        Save Asana
                     </button>
                 </div>
             </form>
@@ -684,9 +684,9 @@
                 <div>
                     <div class="flex items-center space-x-2">
                         <span id="insp-category" class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">CATEGORY</span>
-                        <span id="insp-custom-badge" class="hidden text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">CUSTOM POSE</span>
+                        <span id="insp-custom-badge" class="hidden text-[10px] font-extrabold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">CUSTOM ASANA</span>
                     </div>
-                    <h3 id="insp-title" class="text-xl font-extrabold text-white mt-1">Posture Detail</h3>
+                    <h3 id="insp-title" class="text-xl font-extrabold text-white mt-1">Asana Detail</h3>
                     <div id="insp-sanskrit" class="text-xs font-semibold italic text-teal-400 tracking-wide mt-0.5">Sanskrit Transliteration</div>
                 </div>
                 <div class="flex items-center space-x-2">
@@ -707,7 +707,7 @@
                             <i data-lucide="dumbbell" class="w-4 h-4 text-rose-400"></i>
                             <span>Supplemental Strength Cues & Calisthenics</span>
                         </h4>
-                        <span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 border border-rose-500/30">Prerequisite Power</span>
+                        <span class="text-[10px] font-extrabold text-rose-300 uppercase tracking-wider px-2 py-0.5 rounded bg-rose-500/20 border border-rose-500/30">Complementary Strength</span>
                     </div>
                     <div id="insp-bw-section" class="space-y-2 pt-1">
                         <!-- Populated dynamically by JS -->
@@ -864,7 +864,7 @@
                 <div class="glass-card p-3.5 rounded-xl border-slate-800 space-y-2">
                     <div class="flex items-center space-x-2">
                         <i data-lucide="git-fork" class="w-4 h-4 text-teal-400"></i>
-                        <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Tied Yoga Asanas (Prerequisites):</span>
+                        <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Paired Asanas (Complementary):</span>
                     </div>
                     <div id="bw-modal-poses-container" class="flex flex-wrap gap-1.5 pt-1">
                         <!-- Populated by JS -->
@@ -943,13 +943,13 @@
     </div>
 
 
-    <!-- MODAL: ADD/EDIT CUSTOM POSE MODAL -->
+    <!-- MODAL: ADD/EDIT CUSTOM ASANA MODAL -->
     <div id="custom-pose-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-lg rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden">
             <div class="p-5 border-b border-slate-800 flex items-center justify-between">
                 <h3 id="custom-pose-modal-title" class="text-lg font-bold text-white flex items-center space-x-2">
                     <i data-lucide="sparkles" class="w-5 h-5 text-teal-400"></i>
-                    <span>Add Custom Yoga Pose</span>
+                    <span>Add Custom Asana</span>
                 </h3>
                 <button onclick="closeCustomPoseModal()" class="text-slate-400 hover:text-white p-1 rounded-lg">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -1000,7 +1000,7 @@
 
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-400 mb-1">Prerequisite Skill / Pose</label>
+                        <label class="block text-xs font-semibold text-slate-400 mb-1">Prerequisite Skill / Asana</label>
                         <input type="text" id="custom-pose-prereq" placeholder="e.g. Side Crow Pose" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-teal-400 focus:outline-none">
                     </div>
 
@@ -1025,7 +1025,7 @@
                         Cancel
                     </button>
                     <button type="submit" class="px-5 py-2 bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-slate-950 font-bold text-xs rounded-xl shadow-lg shadow-teal-500/25 transition">
-                        Save Pose
+                        Save Asana
                     </button>
                 </div>
             </form>
@@ -1055,7 +1055,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Tied Yoga Asanas / Poses (Select Multiple) *</label>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1">Paired Asanas (Select Multiple) *</label>
                     <div id="custom-bw-pose-selector" class="flex flex-wrap gap-1.5 p-2 bg-slate-900/90 border border-slate-700 rounded-xl max-h-36 overflow-y-auto">
                         <!-- Injected by JS -->
                     </div>
@@ -1142,7 +1142,7 @@
                 <div class="glass-card p-3.5 rounded-xl border-slate-800 space-y-2">
                     <div class="flex items-center space-x-2">
                         <i data-lucide="git-fork" class="w-4 h-4 text-teal-400"></i>
-                        <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Tied Yoga Asanas (Mobility Prerequisites):</span>
+                        <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Paired Asanas (Complementary):</span>
                     </div>
                     <div id="stretch-modal-poses-container" class="flex flex-wrap gap-1.5 pt-1">
                         <!-- Injected by JS -->
@@ -1243,7 +1243,7 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Tied Yoga Asanas / Poses (Select Multiple) *</label>
+                    <label class="block text-xs font-semibold text-slate-400 mb-1">Paired Asanas (Select Multiple) *</label>
                     <div id="custom-stretch-pose-selector" class="flex flex-wrap gap-1.5 p-2 bg-slate-900/90 border border-slate-700 rounded-xl max-h-36 overflow-y-auto">
                         <!-- Injected by JS -->
                     </div>
@@ -1360,7 +1360,7 @@
                         <i data-lucide="download" class="w-4 h-4"></i>
                         <span>1. Saving / Exporting Data</span>
                     </h4>
-                    <p>Tap the <strong class="text-teal-300">Export</strong> (download) button in the top header. This downloads a complete backup file containing all custom poses, modifiers, calisthenics drills and stretches.</p>
+                    <p>Tap the <strong class="text-teal-300">Export</strong> (download) button in the top header. This downloads a complete backup file containing all custom asanas, modifiers, calisthenics drills and stretches.</p>
                 </div>
 
                 <div class="glass-card p-3.5 rounded-xl border-emerald-500/30 bg-emerald-950/20 space-y-1">
@@ -2347,7 +2347,7 @@
                     'Lower right shoulder and cheek to floor while keeping hips high.',
                     'Hold for 45 seconds, then switch sides.'
                 ],
-                tips: 'Relieves mid-back stiffness and prepares spine for deep rotational poses.'
+                tips: 'Relieves mid-back stiffness and prepares spine for deep rotational asanas.'
             },
             {
                 id: 'str_cat_cow',
@@ -2653,7 +2653,7 @@
             const bwPoseFilter = document.getElementById('bw-pose-filter');
             const stretchPoseFilter = document.getElementById('stretch-pose-filter');
 
-            let optionsHtmlFilter = '<option value="All">All Tied Poses</option>';
+            let optionsHtmlFilter = '<option value="All">All Paired Asanas</option>';
 
             // Sort alphabetically for clean UI dropdowns
             const sorted = [...YOGA_DATABASE].sort((a, b) => a.englishName.localeCompare(b.englishName));
@@ -2818,7 +2818,7 @@
                 const pose = YOGA_DATABASE.find(p => p.id === poseId);
                 if (!pose) return;
 
-                titleEl.innerText = 'Edit Custom Yoga Pose';
+                titleEl.innerText = 'Edit Custom Asana';
                 document.getElementById('custom-pose-id').value = pose.id;
                 document.getElementById('custom-pose-english').value = pose.englishName;
                 document.getElementById('custom-pose-sanskrit').value = pose.sanskritName || '';
@@ -2846,7 +2846,7 @@
                     document.getElementById('custom-pose-mod-cues').value = modData.cues || '';
                 }
             } else {
-                titleEl.innerText = 'Add Custom Yoga Pose';
+                titleEl.innerText = 'Add Custom Asana';
                 form.reset();
                 document.getElementById('custom-pose-id').value = '';
                 document.getElementById('custom-pose-category').value = 'Hip Openers & Seated';
@@ -2930,10 +2930,10 @@
                         pose.modifiers[activeKey].cues = modCues;
                     }
 
-                    showToastNotification(`Yoga pose "${englishName}" updated!`, 'success');
+                    showToastNotification(`Asana "${englishName}" updated!`, 'success');
                 }
             } else {
-                // CREATE NEW CUSTOM POSE
+                // CREATE NEW CUSTOM ASANA
                 targetPoseId = 'pose_custom_' + Date.now();
                 const newPose = {
                     id: targetPoseId,
@@ -2958,7 +2958,7 @@
 
                 newPose.secondaryTargets = customPoseSecondaryTargets.filter(t => t !== target);
                 YOGA_DATABASE.push(newPose);
-                showToastNotification(`Custom pose "${englishName}" added to database!`, 'success');
+                showToastNotification(`Custom asana "${englishName}" added to database!`, 'success');
             }
 
             // Synchronize tied Bodyweight Drills & Stretches
@@ -2985,7 +2985,7 @@
 
             const pose = YOGA_DATABASE[index];
 
-            if (confirm(`Are you sure you want to delete the pose "${pose.englishName}"? This will also un-link it from any tied drills or stretches.`)) {
+            if (confirm(`Are you sure you want to delete the asana "${pose.englishName}"? This will also un-link it from any tied drills or stretches.`)) {
                 YOGA_DATABASE.splice(index, 1);
 
                 // Clean references in Bodyweight Drills
@@ -3013,7 +3013,7 @@
                 renderStretchesList();
                 renderAnatomyExerciseList();
 
-                showToastNotification(`Pose "${pose.englishName}" deleted successfully.`, 'info');
+                showToastNotification(`Asana "${pose.englishName}" deleted successfully.`, 'info');
             }
         }
 
@@ -3078,7 +3078,7 @@
                             <span class="w-2.5 h-2.5 rounded-full bg-teal-400"></span>
                             <span>${cat}</span>
                         </h3>
-                        <span class="text-xs text-slate-400 font-medium">${catExercises.length} Posture Progression(s)</span>
+                        <span class="text-xs text-slate-400 font-medium">${catExercises.length} Asana Progression(s)</span>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="cards-container-${cat.replace(/[^a-zA-Z0-9]/g, '')}">
                     </div>
@@ -3205,10 +3205,10 @@
                                     </span>
                                 </div>
                                 <div class="flex items-center space-x-1">
-                                    <button onclick="openCustomPoseModal('${pose.id}')" title="Edit Pose" class="p-1 text-slate-400 hover:text-teal-300 transition">
+                                    <button onclick="openCustomPoseModal('${pose.id}')" title="Edit Asana" class="p-1 text-slate-400 hover:text-teal-300 transition">
                                         <i data-lucide="edit-3" class="w-4 h-4"></i>
                                     </button>
-                                                                            <button onclick="deleteCustomPose('${pose.id}', event)" title="Delete Pose" class="p-1 text-slate-400 hover:text-red-400 transition">
+                                                                            <button onclick="deleteCustomPose('${pose.id}', event)" title="Delete Asana" class="p-1 text-slate-400 hover:text-red-400 transition">
                                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                                         </button>
                                     
@@ -3270,11 +3270,11 @@
                 container.innerHTML = `
                     <div class="text-center py-12 glass-panel rounded-2xl border-slate-800">
                         <i data-lucide="search-x" class="w-8 h-8 text-slate-500 mx-auto mb-2"></i>
-                        <p class="text-sm font-semibold text-slate-300">No yoga poses matched "${searchVal}".</p>
-                        <p class="text-xs text-slate-500 mt-1">Try clearing search terms or create a new custom pose!</p>
+                        <p class="text-sm font-semibold text-slate-300">No asanas matched "${searchVal}".</p>
+                        <p class="text-xs text-slate-500 mt-1">Try clearing search terms or create a new custom asana!</p>
                         <button onclick="openCustomPoseModal()" class="mt-4 px-4 py-2 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 text-slate-950 font-bold text-xs inline-flex items-center space-x-1.5">
                             <i data-lucide="plus" class="w-4 h-4"></i>
-                            <span>Create Custom Pose</span>
+                            <span>Create Custom Asana</span>
                         </button>
                     </div>
                 `;
@@ -3323,7 +3323,7 @@
                     <div class="col-span-full text-center py-12 glass-panel rounded-2xl border-slate-800">
                         <i data-lucide="dumbbell" class="w-8 h-8 text-slate-500 mx-auto mb-2"></i>
                         <p class="text-sm font-semibold text-slate-300">No bodyweight exercises match your selected filters.</p>
-                        <p class="text-xs text-slate-500 mt-1">Try switching target muscles, selecting another pose, or creating a custom exercise.</p>
+                        <p class="text-xs text-slate-500 mt-1">Try switching target muscles, selecting another asana, or creating a custom exercise.</p>
                         <button onclick="openCustomBWModal()" class="mt-4 px-4 py-2 rounded-xl bg-gradient-to-r from-rose-500 to-pink-600 text-slate-950 font-bold text-xs inline-flex items-center space-x-1.5">
                             <i data-lucide="plus" class="w-4 h-4"></i>
                             <span>Create Custom Drill</span>
@@ -3379,7 +3379,7 @@
                         </div>
 
                         <div class="mt-2 space-y-1">
-                            <span class="text-[9px] uppercase font-extrabold text-slate-400 block">Tied Yoga Poses:</span>
+                            <span class="text-[9px] uppercase font-extrabold text-slate-400 block">Paired Asanas:</span>
                             <div class="flex flex-wrap gap-1">
                                 ${posePillsHtml || '<span class="text-[10px] text-slate-500">General Conditioning</span>'}
                             </div>
@@ -3731,7 +3731,7 @@
                         </div>
 
                         <div class="mt-2 space-y-1">
-                            <span class="text-[9px] uppercase font-extrabold text-slate-400 block">Tied Yoga Poses:</span>
+                            <span class="text-[9px] uppercase font-extrabold text-slate-400 block">Paired Asanas:</span>
                             <div class="flex flex-wrap gap-1">
                                 ${posePillsHtml || '<span class="text-[10px] text-slate-500">General Mobility</span>'}
                             </div>
@@ -4029,7 +4029,7 @@
                 customActions.innerHTML = `
                     <button onclick="openCustomPoseModal('${pose.id}'); closeInspectorModal();" class="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition flex items-center space-x-1">
                         <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
-                        <span>Edit Pose</span>
+                        <span>Edit Asana</span>
                     </button>
                                             <button onclick="deleteCustomPose('${pose.id}')" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
                             <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
@@ -4057,7 +4057,7 @@
                         </div>
                     `).join('');
                 } else {
-                    bwSection.innerHTML = `<p class="text-xs text-slate-400 italic">No specific strength drills linked directly to this pose.</p>`;
+                    bwSection.innerHTML = `<p class="text-xs text-slate-400 italic">No specific strength drills linked directly to this asana.</p>`;
                 }
             }
 
@@ -4079,7 +4079,7 @@
                         </div>
                     `).join('');
                 } else {
-                    stretchSection.innerHTML = `<p class="text-xs text-slate-400 italic">No target stretches linked directly to this pose.</p>`;
+                    stretchSection.innerHTML = `<p class="text-xs text-slate-400 italic">No target stretches linked directly to this asana.</p>`;
                 }
             }
 
@@ -4233,7 +4233,7 @@
             if (!pose) return;
 
             if (Object.keys(pose.modifiers).length <= 1) {
-                showToastNotification('Each pose must have at least one modifier variation.', 'error');
+                showToastNotification('Each asana must have at least one modifier variation.', 'error');
                 return;
             }
 
@@ -4263,7 +4263,7 @@
             const badge = document.getElementById('anatomy-mode-badge');
             if (badge) {
                 if (mode === 'poses') {
-                    badge.innerText = 'Mode: Yoga Poses';
+                    badge.innerText = 'Mode: Asanas';
                     badge.className = 'text-xs text-teal-400 font-bold uppercase tracking-wider';
                 } else if (mode === 'bodyweight') {
                     badge.innerText = 'Mode: Supplemental Bodyweight';
@@ -4387,7 +4387,7 @@
                     const primaryItems = YOGA_DATABASE.filter(p => p.target === sel);
                     const secondaryItems = YOGA_DATABASE.filter(p => p.target !== sel && getSecondaryTargets(p).includes(sel));
                     if (primaryItems.length + secondaryItems.length === 0) {
-                        container.innerHTML = `<p class="col-span-full text-xs text-slate-400 italic">No yoga poses target ${sel}.</p>`;
+                        container.innerHTML = `<p class="col-span-full text-xs text-slate-400 italic">No asanas target ${sel}.</p>`;
                         return;
                     }
                     const section = (title, blurb, items, role, tone) => `
@@ -4398,11 +4398,11 @@
                             </div>
                             <span class="px-2 py-0.5 rounded-lg text-xs font-bold ${tone.chip}">${items.length}</span>
                         </div>
-                        ${items.length ? items.map(p => cardHtml(p, role)).join('') : `<p class="col-span-full text-xs text-slate-500 italic">No poses in this group.</p>`}`;
+                        ${items.length ? items.map(p => cardHtml(p, role)).join('') : `<p class="col-span-full text-xs text-slate-500 italic">No asanas in this group.</p>`}`;
                     container.innerHTML =
-                        section(`Primary target: ${sel}`, `Poses where ${sel} is the main muscle group worked.`, primaryItems, 'primary',
+                        section(`Primary target: ${sel}`, `Asanas where ${sel} is the main muscle group worked.`, primaryItems, 'primary',
                             { border: 'border-teal-500/30', text: 'text-teal-300', chip: 'bg-teal-500/20 text-teal-200 border border-teal-500/30' }) +
-                        section(`Secondary target: ${sel}`, `Poses where ${sel} is also worked as a supporting muscle group.`, secondaryItems, 'secondary',
+                        section(`Secondary target: ${sel}`, `Asanas where ${sel} is also worked as a supporting muscle group.`, secondaryItems, 'secondary',
                             { border: 'border-indigo-500/30', text: 'text-indigo-300', chip: 'bg-indigo-500/20 text-indigo-200 border border-indigo-500/30' });
                 }
             } else if (anatomyDisplayMode === 'bodyweight') {
