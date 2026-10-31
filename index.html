@@ -689,6 +689,23 @@
     </div>
 
 
+    <!-- MODAL: CONFIRM ACTION -->
+    <div id="confirm-modal" class="fixed inset-0 z-[70] bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="if(event.target===this) closeConfirmModal()">
+        <div role="alertdialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-message" class="glass-panel w-full max-w-sm rounded-2xl border-slate-700 overflow-hidden">
+            <div class="p-5 border-b border-slate-800 flex items-center space-x-2">
+                <i data-lucide="trash-2" class="w-5 h-5 text-red-400"></i>
+                <h3 id="confirm-title" class="text-lg font-bold text-white">Are you sure?</h3>
+            </div>
+            <div class="p-5">
+                <p id="confirm-message" class="text-sm text-slate-300 leading-relaxed"></p>
+            </div>
+            <div class="p-4 sm:p-5 border-t border-slate-800 flex items-center justify-end gap-3 bg-slate-900/60">
+                <button id="confirm-cancel-btn" type="button" onclick="closeConfirmModal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">Cancel</button>
+                <button id="confirm-ok-btn" type="button" onclick="runConfirmModal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 transition">Delete</button>
+            </div>
+        </div>
+    </div>
+
     <!-- MODAL: YOGA EXERCISE INSPECTOR & MODIFIER MODAL -->
     <div id="inspector-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="glass-panel w-full max-w-2xl rounded-2xl border-slate-700 max-h-[90vh] flex flex-col overflow-hidden" style="max-height:90vh;max-height:90dvh">
@@ -2922,7 +2939,7 @@
 
             const pose = YOGA_DATABASE[index];
 
-            if (confirm(`Are you sure you want to delete the asana "${pose.englishName}"? This will also un-link it from any tied drills or stretches.`)) {
+            showConfirmModal({title:`Delete asana?`,message:`Delete "${pose.englishName}"? This will also un-link it from any paired drills or stretches.`,confirmLabel:'Delete'}, () => {
                 YOGA_DATABASE.splice(index, 1);
 
                 // Clean references in Bodyweight Drills
@@ -2951,7 +2968,7 @@
                 renderAnatomyExerciseList();
 
                 showToastNotification(`Asana "${pose.englishName}" deleted successfully.`, 'info');
-            }
+            });
         }
 
         // ================= RENDER SKILL TREES =================
@@ -3452,7 +3469,7 @@
             if (index === -1) return;
 
             const bw = BODYWEIGHT_EXERCISES_DATABASE[index];
-            if (confirm(`Are you sure you want to delete "${bw.title}"?`)) {
+            showConfirmModal({title:`Delete drill?`,message:`Delete "${bw.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 BODYWEIGHT_EXERCISES_DATABASE.splice(index, 1);
                 showToastNotification('Drill deleted.', 'success');
 
@@ -3463,7 +3480,7 @@
                 renderSkillTrees(currentFamilyFilter);
                 renderBWExercisesList();
                 renderAnatomyExerciseList();
-            }
+            });
         }
 
         // ================= BODYWEIGHT INSPECTOR & TIMER =================
@@ -3815,7 +3832,7 @@
             if (index === -1) return;
 
             const stretch = TARGETED_STRETCHES_DATABASE[index];
-            if (confirm(`Are you sure you want to delete "${stretch.title}"?`)) {
+            showConfirmModal({title:`Delete stretch?`,message:`Delete "${stretch.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 TARGETED_STRETCHES_DATABASE.splice(index, 1);
                 showToastNotification('Stretch deleted successfully.', 'success');
 
@@ -3826,7 +3843,7 @@
                 renderSkillTrees(currentFamilyFilter);
                 renderStretchesList();
                 renderAnatomyExerciseList();
-            }
+            });
         }
 
         // ================= STRETCH INSPECTOR MODAL & TIMER =================
@@ -4199,7 +4216,7 @@
                 return;
             }
 
-            if (confirm(`Are you sure you want to delete this modifier?`)) {
+            showConfirmModal({title:`Delete modifier?`,message:`Delete this modifier from the asana? This can't be undone.`,confirmLabel:'Delete'}, () => {
                 delete pose.modifiers[modifierKey];
 
                 if (pose.activeModifier === modifierKey) {
@@ -4211,7 +4228,7 @@
                 if (selectedInspectorPoseId === poseId) {
                     openInspectorModal(poseId);
                 }
-            }
+            });
         }
 
         // ================= ANATOMY MAP TAB CONTROLS =================
@@ -4497,6 +4514,36 @@
             };
             reader.readAsText(file);
         }
+
+        // ================= CONFIRM MODAL =================
+        let confirmModalCallback = null;
+
+        function showConfirmModal(options, onConfirm) {
+            confirmModalCallback = onConfirm;
+            document.getElementById('confirm-title').textContent = options.title || 'Are you sure?';
+            document.getElementById('confirm-message').textContent = options.message || '';
+            document.getElementById('confirm-ok-btn').textContent = options.confirmLabel || 'Confirm';
+            document.getElementById('confirm-modal').classList.remove('hidden');
+            lucide.createIcons();
+            document.getElementById('confirm-cancel-btn').focus();
+        }
+
+        function closeConfirmModal() {
+            confirmModalCallback = null;
+            document.getElementById('confirm-modal').classList.add('hidden');
+        }
+
+        function runConfirmModal() {
+            const cb = confirmModalCallback;
+            closeConfirmModal();
+            if (cb) cb();
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !document.getElementById('confirm-modal').classList.contains('hidden')) {
+                closeConfirmModal();
+            }
+        });
 
         // ================= TOAST NOTIFICATION UTILITY =================
         function showToastNotification(message, type = 'info') {
