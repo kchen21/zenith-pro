@@ -129,6 +129,9 @@
             color: #fda4af;
             border: 1px solid rgba(244, 63, 94, 0.3);
         }
+            input[type="number"] { text-align: right; -moz-appearance: textfield; appearance: textfield; }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
     </style>
 <div id="app-root" class="min-h-screen flex flex-col antialiased selection:bg-teal-500 selection:text-white">
 <!-- TOP NAVIGATION BAR -->
@@ -916,6 +919,11 @@
                         <div>
                             <h5 class="text-xs font-bold text-white">Interval Hold Assistant</h5>
                             <p class="text-[10px] text-slate-400">Maintain core tension and controlled breathing.</p>
+                            <label class="mt-1.5 flex items-center gap-1.5 text-[10px] text-slate-400">
+                                <span>Set time:</span>
+                                <input type="number" id="bw-timer-duration" min="5" max="3600" step="5" value="45" inputmode="numeric" onchange="setBWTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-rose-400 focus:outline-none">
+                                <span>sec</span>
+                            </label>
                         </div>
                     </div>
 
@@ -1194,6 +1202,11 @@
                         <div>
                             <h5 class="text-xs font-bold text-white">Stretch Hold Assistant</h5>
                             <p class="text-[10px] text-slate-400">Maintain deep diaphragmatic breathing throughout the hold.</p>
+                            <label class="mt-1.5 flex items-center gap-1.5 text-[10px] text-slate-400">
+                                <span>Set time:</span>
+                                <input type="number" id="stretch-timer-duration" min="5" max="3600" step="5" value="30" inputmode="numeric" onchange="setStretchTimerDuration(this.value)" aria-label="Timer length in seconds" class="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-base sm:text-xs text-white focus:border-sky-400 focus:outline-none">
+                                <span>sec</span>
+                            </label>
                         </div>
                     </div>
 
@@ -3617,6 +3630,17 @@
             lucide.createIcons();
         }
 
+        function setBWTimerDuration(value) {
+            const bw = BODYWEIGHT_EXERCISES_DATABASE.find(b => b.id === selectedBWId);
+            let secs = Math.round(parseInt(value, 10));
+            if (!bw || !isFinite(secs)) { resetBWHoldTimer(); return; }
+            secs = Math.min(3600, Math.max(5, secs));
+            bw.defaultDurationSecs = secs;
+            resetBWHoldTimer();
+            renderBWExercisesList();
+            showToastNotification(`Interval time set to ${secs} sec.`, 'success');
+        }
+
         function resetBWHoldTimer() {
             clearInterval(bwTimerInterval);
             isBWTimerRunning = false;
@@ -3625,6 +3649,8 @@
 
             const timerNum = document.getElementById('bw-timer-num');
             if (timerNum) timerNum.innerText = bwTimerSeconds;
+            const bwDurInput = document.getElementById('bw-timer-duration');
+            if (bwDurInput) bwDurInput.value = bwTimerSeconds;
 
             const btn = document.getElementById('bw-timer-start-btn');
             if (btn) btn.innerHTML = '<i data-lucide="play" class="w-4 h-4"></i><span>Start Set</span>';
@@ -3967,6 +3993,19 @@
             lucide.createIcons();
         }
 
+        function setStretchTimerDuration(value) {
+            const stretch = TARGETED_STRETCHES_DATABASE.find(s => s.id === selectedStretchId);
+            let secs = Math.round(parseInt(value, 10));
+            if (!stretch || !isFinite(secs)) { resetStretchHoldTimer(); return; }
+            secs = Math.min(3600, Math.max(5, secs));
+            stretch.durationSecs = secs;
+            resetStretchHoldTimer();
+            const timeEl = document.getElementById('stretch-modal-time');
+            if (timeEl) timeEl.innerText = `${secs} sec / hold`;
+            renderStretchesList();
+            showToastNotification(`Hold time set to ${secs} sec.`, 'success');
+        }
+
         function resetStretchHoldTimer() {
             clearInterval(stretchTimerInterval);
             isStretchTimerRunning = false;
@@ -3975,6 +4014,8 @@
             
             const timerNum = document.getElementById('stretch-timer-num');
             if (timerNum) timerNum.innerText = stretchTimerSeconds;
+            const stretchDurInput = document.getElementById('stretch-timer-duration');
+            if (stretchDurInput) stretchDurInput.value = stretchTimerSeconds;
 
             const btn = document.getElementById('stretch-timer-start-btn');
             if (btn) btn.innerHTML = '<i data-lucide="play" class="w-4 h-4"></i><span>Start Hold</span>';
