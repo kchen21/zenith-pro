@@ -3252,11 +3252,10 @@
                                     <button onclick="openCustomPoseModal('${pose.id}')" title="Edit Pose" class="p-1 text-slate-400 hover:text-teal-300 transition">
                                         <i data-lucide="edit-3" class="w-4 h-4"></i>
                                     </button>
-                                    ${pose.isCustom ? `
-                                        <button onclick="deleteCustomPose('${pose.id}', event)" title="Delete Pose" class="p-1 text-slate-400 hover:text-red-400 transition">
+                                                                            <button onclick="deleteCustomPose('${pose.id}', event)" title="Delete Pose" class="p-1 text-slate-400 hover:text-red-400 transition">
                                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                                         </button>
-                                    ` : ''}
+                                    
                                     <button onclick="togglePoseMastery('${pose.id}')" class="p-1 rounded-lg text-slate-400 hover:text-amber-400 transition">
                                         <i data-lucide="check-circle" class="w-5 h-5 ${pose.mastered ? 'text-teal-400 fill-teal-400/20' : 'text-slate-600'}"></i>
                                     </button>
@@ -3419,11 +3418,10 @@
                                 <button onclick="openCustomBWModal('${bw.id}')" title="Edit Drill" class="p-1 text-slate-400 hover:text-rose-300 transition">
                                     <i data-lucide="edit-2" class="w-4 h-4"></i>
                                 </button>
-                                ${isCustom ? `
-                                    <button onclick="deleteCustomBWExercise('${bw.id}', event)" title="Delete Drill" class="p-1 text-slate-400 hover:text-red-400 transition">
+                                                                    <button onclick="deleteCustomBWExercise('${bw.id}', event)" title="Delete Drill" class="p-1 text-slate-400 hover:text-red-400 transition">
                                         <i data-lucide="trash-2" class="w-4 h-4"></i>
                                     </button>
-                                ` : ''}
+                                
                             </div>
                         </div>
 
@@ -3564,14 +3562,9 @@
             if (index === -1) return;
 
             const bw = BODYWEIGHT_EXERCISES_DATABASE[index];
-            if (!bw.isCustom) {
-                showToastNotification('System default bodyweight drills cannot be deleted.', 'error');
-                return;
-            }
-
             if (confirm(`Are you sure you want to delete "${bw.title}"?`)) {
                 BODYWEIGHT_EXERCISES_DATABASE.splice(index, 1);
-                showToastNotification('Custom bodyweight drill deleted.', 'success');
+                showToastNotification('Bodyweight drill deleted.', 'success');
 
                 if (selectedBWId === exerciseId) {
                     closeBWModal();
@@ -3624,12 +3617,11 @@
                     <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
                     <span>Edit Drill</span>
                 </button>
-                ${bw.isCustom ? `
-                    <button onclick="deleteCustomBWExercise('${bw.id}', event)" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
+                                    <button onclick="deleteCustomBWExercise('${bw.id}', event)" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
                         <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                         <span>Delete</span>
                     </button>
-                ` : ''}
+                
             `;
 
             resetBWHoldTimer();
@@ -3778,11 +3770,10 @@
                                 <button onclick="openCustomStretchModal('${st.id}')" title="Edit Stretch" class="p-1 text-slate-400 hover:text-sky-300 transition">
                                     <i data-lucide="edit-2" class="w-4 h-4"></i>
                                 </button>
-                                ${isCustom ? `
-                                    <button onclick="deleteCustomStretch('${st.id}', event)" title="Delete Stretch" class="p-1 text-slate-400 hover:text-red-400 transition">
+                                                                    <button onclick="deleteCustomStretch('${st.id}', event)" title="Delete Stretch" class="p-1 text-slate-400 hover:text-red-400 transition">
                                         <i data-lucide="trash-2" class="w-4 h-4"></i>
                                     </button>
-                                ` : ''}
+                                
                             </div>
                         </div>
 
@@ -3921,14 +3912,9 @@
             if (index === -1) return;
 
             const stretch = TARGETED_STRETCHES_DATABASE[index];
-            if (!stretch.isCustom) {
-                showToastNotification('System default stretches cannot be deleted.', 'error');
-                return;
-            }
-
             if (confirm(`Are you sure you want to delete "${stretch.title}"?`)) {
                 TARGETED_STRETCHES_DATABASE.splice(index, 1);
-                showToastNotification('Custom stretch deleted successfully.', 'success');
+                showToastNotification('Stretch deleted successfully.', 'success');
 
                 if (selectedStretchId === stretchId) {
                     closeStretchModal();
@@ -3981,12 +3967,11 @@
                     <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
                     <span>Edit Stretch</span>
                 </button>
-                ${stretch.isCustom ? `
-                    <button onclick="deleteCustomStretch('${stretch.id}', event)" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
+                                    <button onclick="deleteCustomStretch('${stretch.id}', event)" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
                         <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                         <span>Delete</span>
                     </button>
-                ` : ''}
+                
             `;
             
             resetStretchHoldTimer();
@@ -4106,12 +4091,11 @@
                         <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
                         <span>Edit Pose</span>
                     </button>
-                    ${pose.isCustom ? `
-                        <button onclick="deleteCustomPose('${pose.id}')" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
+                                            <button onclick="deleteCustomPose('${pose.id}')" class="px-3 py-1.5 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-xs font-bold transition flex items-center space-x-1">
                             <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                             <span>Delete</span>
                         </button>
-                    ` : ''}
+                    
                 `;
             }
 
