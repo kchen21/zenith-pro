@@ -1,0 +1,97 @@
+html { color-scheme: dark; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #070d17;
+    color: #e2e8f0;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0b1320;
+}
+::-webkit-scrollbar-thumb {
+    background: #1e2d42;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2dd4bf;
+}
+.glass-panel {
+    background: rgba(17, 28, 45, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.glass-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(45, 212, 191, 0.15);
+    transition: all 0.25s ease-in-out;
+}
+.glass-card:hover {
+    border-color: rgba(45, 212, 191, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(20, 184, 166, 0.15);
+}
+.breath-pulse {
+    animation: pulse-ring 4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+@keyframes pulse-ring {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.6)); }
+}
+
+/* Realistic Anatomy Styling */
+.anatomy-part {
+    cursor: pointer;
+    fill: #1e293b;
+    stroke: #334155;
+    stroke-width: 1.2;
+    transition: all 0.25s ease;
+}
+.anatomy-part:hover {
+    fill: #14b8a6;
+    stroke: #2dd4bf;
+    filter: drop-shadow(0 0 8px rgba(45, 212, 191, 0.8));
+}
+.anatomy-part.active {
+    fill: #2dd4bf !important;
+    stroke: #38bdf8 !important;
+    filter: drop-shadow(0 0 12px #2dd4bf);
+}
+
+/* Modifier & Exercise Badge Styles */
+.badge-regressed {
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.badge-standard {
+    background: rgba(20, 184, 166, 0.15);
+    color: #5eead4;
+    border: 1px solid rgba(20, 184, 166, 0.3);
+}
+.badge-advanced {
+    background: rgba(168, 85, 247, 0.15);
+    color: #d8b4fe;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+.badge-custom {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fcd34d;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.badge-stretch {
+    background: rgba(56, 189, 248, 0.15);
+    color: #7dd3fc;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.badge-bodyweight {
+    background: rgba(244, 63, 94, 0.15);
+    color: #fda4af;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+}
+input[type="number"] { text-align: right; -moz-appearance: textfield; appearance: textfield; }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
