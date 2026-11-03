@@ -2638,7 +2638,26 @@
         }
 
         // ================= TAB SWITCHING =================
+        // Last scroll position per tab for this session (the Asanas tab is shown on load)
+        let currentTabId = 'skilltrees';
+        const tabScrollPositions = {};
+
+        function getPageScroll() {
+            return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        }
+
+        function setPageScroll(y) {
+            window.scrollTo(0, y);
+            document.documentElement.scrollTop = y;
+            document.body.scrollTop = y;
+        }
+
         function switchTab(tabId) {
+            // Remember where the user was in the tab they are leaving (before it is hidden)
+            if (currentTabId) tabScrollPositions[currentTabId] = getPageScroll();
+            const savedScroll = tabScrollPositions[tabId] || 0; // first visit => top
+            currentTabId = tabId;
+
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.nav-btn').forEach(el => {
                 el.classList.remove('active', 'text-teal-400', 'bg-teal-500/10', 'border', 'border-teal-500/30');
@@ -2653,6 +2672,9 @@
                 selectedNav.classList.add('active', 'text-teal-400', 'bg-teal-500/10', 'border', 'border-teal-500/30');
                 selectedNav.classList.remove('text-slate-400');
             }
+
+            // Return to the last position in this tab (top if never visited before)
+            setPageScroll(savedScroll);
         }
 
         // Helper to infer modifier category
