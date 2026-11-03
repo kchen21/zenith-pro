@@ -103,7 +103,7 @@
                 </div>
                 <div>
                     <span class="font-bold text-amber-300 block">Managing Your Custom Asanas & Training Data</span>
-                    <p class="text-slate-400">Custom asanas, modifiers, drills, and progress are saved automatically in this browser. Importing a backup overwrites them. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
+                    <p class="text-slate-400">Custom asanas, modifiers, drills, and progress are preserved in your session. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
                 </div>
             </div>
             <div class="flex items-center gap-2 self-end sm:self-center">
@@ -1341,6 +1341,36 @@
                     advanced_2: { category: 'advanced', englishName: 'Toe-Tap Dynamic Plank', sanskritName: 'Chala Phalakāsana', level: 'Advanced', intensity: 8, cues: 'Tap right foot out to right side, return to center, then left foot while keeping pelvis completely still.' }
                 }
             },
+            {
+                id: 'forward_fold',
+                englishName: 'Standing Forward Fold',
+                sanskritName: 'Uttānāsana',
+                category: 'Restorative & Foundations',
+                target: 'Hamstrings',
+                prereq: 'Mountain Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Bent-Knee Rag Doll Fold', sanskritName: 'Sūkṣma Uttānāsana', level: 'Beginner', intensity: 2, cues: 'Bend knees generously, hold opposite elbows and let the torso hang heavy while swaying gently side to side.' },
+                    regressed_2: { category: 'regressed', englishName: 'Hands-on-Blocks Fold', sanskritName: 'Sālamba Uttānāsana', level: 'Beginner', intensity: 3, cues: 'Place hands on blocks under shoulders to keep the spine long when hamstrings are tight.' },
+                    standard_1: { category: 'standard', englishName: 'Standing Forward Fold (Standard)', sanskritName: 'Uttānāsana', level: 'Beginner', intensity: 4, cues: 'Feet hip-width, hinge from the hip creases, keep legs active, lengthen crown toward floor and relax the neck.' },
+                    advanced_1: { category: 'advanced', englishName: 'Palms-Under-Feet Fold', sanskritName: 'Pādahastāsana', level: 'Intermediate', intensity: 6, cues: 'Slide palms under feet with toes touching wrists, bend elbows out and draw chest toward thighs.' }
+                }
+            },
+            {
+                id: 'staff_pose',
+                englishName: 'Staff Pose',
+                sanskritName: 'Daṇḍāsana',
+                category: 'Restorative & Foundations',
+                target: 'Core/Abs',
+                prereq: 'None',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Blanket-Lifted Staff Pose', sanskritName: 'Sālamba Daṇḍāsana', level: 'Beginner', intensity: 2, cues: 'Sit on a folded blanket to tilt the pelvis forward and lengthen the spine when hamstrings are tight.' },
+                    regressed_2: { category: 'regressed', englishName: 'Wall-Backed Staff Pose', sanskritName: 'Bhitti Daṇḍāsana', level: 'Beginner', intensity: 2, cues: 'Sit with sacrum and shoulder blades against a wall to learn a tall, neutral spine.' },
+                    standard_1: { category: 'standard', englishName: 'Staff Pose (Standard)', sanskritName: 'Daṇḍāsana', level: 'Beginner', intensity: 3, cues: 'Legs together and extended, feet flexed, palms beside hips, sternum lifted and spine long.' },
+                    advanced_1: { category: 'advanced', englishName: 'Lifted Staff Pose', sanskritName: 'Utthita Daṇḍāsana', level: 'Intermediate', intensity: 6, cues: 'Press palms into the mat and lift hips an inch off the floor while keeping legs straight and active.' }
+                }
+            },
 
             // 2. STANDING & BALANCE
             {
@@ -1465,6 +1495,97 @@
                     advanced_2: { category: 'advanced', englishName: 'Floating Hand Half Moon', sanskritName: 'Nirālamba Ardha Chandrāsana', level: 'Advanced', intensity: 9, cues: 'Hover bottom hand 2 inches off mat, holding full balance balance using standing glute stabilizer.' }
                 }
             },
+            {
+                id: 'chair_pose',
+                englishName: 'Chair Pose',
+                sanskritName: 'Utkaṭāsana',
+                category: 'Standing & Balance',
+                target: 'Quadriceps',
+                prereq: 'Mountain Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Wall-Supported Chair Pose', sanskritName: 'Bhitti Utkaṭāsana', level: 'Beginner', intensity: 4, cues: 'Lean back against a wall and slide down to a partial squat, keeping weight in the heels.' },
+                    regressed_2: { category: 'regressed', englishName: 'Hands-on-Thighs Chair Pose', sanskritName: 'Sūkṣma Utkaṭāsana', level: 'Beginner', intensity: 4, cues: 'Sit hips back into a shallow squat with hands resting on thighs to keep the spine long.' },
+                    standard_1: { category: 'standard', englishName: 'Chair Pose (Standard)', sanskritName: 'Utkaṭāsana', level: 'Intermediate', intensity: 6, cues: 'Bend knees and sit hips back with weight in heels, reach arms overhead by the ears, tailbone long and ribs drawn in.' },
+                    advanced_1: { category: 'advanced', englishName: 'Chair Pose on Toes', sanskritName: 'Pādāṅguṣṭha Utkaṭāsana', level: 'Advanced', intensity: 8, cues: 'Lift heels and balance on the balls of the feet while holding full squat depth with knees together.' }
+                }
+            },
+            {
+                id: 'goddess_pose',
+                englishName: 'Goddess Pose',
+                sanskritName: 'Utkaṭa Koṇāsana',
+                category: 'Standing & Balance',
+                target: 'Hips',
+                prereq: 'Warrior II',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Wall-Supported Goddess Pose', sanskritName: 'Bhitti Utkaṭa Koṇāsana', level: 'Beginner', intensity: 4, cues: 'Rest back against a wall with feet wide and toes turned out, sliding down to a comfortable partial depth.' },
+                    standard_1: { category: 'standard', englishName: 'Goddess Pose (Standard)', sanskritName: 'Utkaṭa Koṇāsana', level: 'Intermediate', intensity: 6, cues: 'Wide stance with toes out about 45 degrees, knees tracking over ankles, pelvis neutral, arms in cactus shape.' },
+                    advanced_1: { category: 'advanced', englishName: 'Goddess Pulses', sanskritName: 'Chala Utkaṭa Koṇāsana', level: 'Advanced', intensity: 7, cues: 'Pulse between half and full depth with thighs reaching parallel and arms overhead.' },
+                    advanced_2: { category: 'advanced', englishName: 'Goddess on Toes', sanskritName: 'Pādāṅguṣṭha Utkaṭa Koṇāsana', level: 'Advanced', intensity: 8, cues: 'Lift heels and balance on the toes while sinking hips straight down between the knees.' }
+                }
+            },
+            {
+                id: 'pyramid_pose',
+                englishName: 'Pyramid Pose',
+                sanskritName: 'Pārśvottānāsana',
+                category: 'Standing & Balance',
+                target: 'Hamstrings',
+                prereq: 'Triangle Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Pyramid (Hands on Blocks)', sanskritName: 'Sālamba Pārśvottānāsana', level: 'Beginner', intensity: 4, cues: 'Place hands on blocks under shoulders and shorten the stance if hamstrings are tight.' },
+                    regressed_2: { category: 'regressed', englishName: 'Pyramid (Bent Front Knee)', sanskritName: 'Sūkṣma Pārśvottānāsana', level: 'Beginner', intensity: 4, cues: 'Keep a soft bend in the front knee so the spine stays long as you fold.' },
+                    standard_1: { category: 'standard', englishName: 'Pyramid Pose (Standard)', sanskritName: 'Pārśvottānāsana', level: 'Intermediate', intensity: 6, cues: 'Back heel grounded at 45 degrees, hips squared, fold over the straight front leg with a flat back.' },
+                    advanced_1: { category: 'advanced', englishName: 'Reverse Prayer Pyramid', sanskritName: 'Paścima Namaskārāsana Pārśvottānāsana', level: 'Advanced', intensity: 8, cues: 'Bring palms together behind the back, then fold forward over the front leg while keeping the hips level.' }
+                }
+            },
+            {
+                id: 'wide_legged_fold',
+                englishName: 'Wide-Legged Forward Fold',
+                sanskritName: 'Prasārita Pādottānāsana',
+                category: 'Standing & Balance',
+                target: 'Hamstrings',
+                prereq: 'Standing Forward Fold',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Wide Fold (Hands on Blocks)', sanskritName: 'Sālamba Prasārita Pādottānāsana', level: 'Beginner', intensity: 3, cues: 'Rest hands on blocks beneath shoulders so the spine stays long as you hinge forward.' },
+                    standard_1: { category: 'standard', englishName: 'Wide-Legged Forward Fold (Standard)', sanskritName: 'Prasārita Pādottānāsana', level: 'Beginner', intensity: 4, cues: 'Feet three to four feet apart and parallel, hinge from the hips and walk hands back between the feet.' },
+                    advanced_1: { category: 'advanced', englishName: 'Wide Fold with Clasped Hands', sanskritName: 'Prasārita Pādottānāsana C', level: 'Intermediate', intensity: 6, cues: 'Interlace fingers behind the back and draw the hands overhead toward the floor to open the chest.' },
+                    advanced_2: { category: 'advanced', englishName: 'Wide Fold Crown-Down', sanskritName: 'Prasārita Pādottānāsana A', level: 'Intermediate', intensity: 6, cues: 'Walk hands in line with the feet, bend elbows and lower the crown of the head toward the mat.' }
+                }
+            },
+            {
+                id: 'dancer_pose',
+                englishName: 'Dancer Pose',
+                sanskritName: 'Naṭarājāsana',
+                category: 'Standing & Balance',
+                target: 'Quadriceps',
+                prereq: 'Tree Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Dancer Pose with Strap', sanskritName: 'Sālamba Naṭarājāsana', level: 'Intermediate', intensity: 5, cues: 'Loop a strap around the lifted foot and hold it with the same-side hand, using a wall for balance.' },
+                    regressed_2: { category: 'regressed', englishName: 'Wall-Supported Dancer', sanskritName: 'Bhitti Naṭarājāsana', level: 'Beginner', intensity: 4, cues: 'Hold a wall with one hand and grip the ankle with the other, keeping the kick modest.' },
+                    standard_1: { category: 'standard', englishName: 'Lord of the Dance (Standard)', sanskritName: 'Naṭarājāsana', level: 'Advanced', intensity: 7, cues: 'Hold the inner ankle, kick the foot into the hand, extend the opposite arm forward and lift the chest.' },
+                    advanced_1: { category: 'advanced', englishName: 'Full Dancer (Two-Hand Grip)', sanskritName: 'Pūrṇa Naṭarājāsana', level: 'Advanced', intensity: 9, cues: 'Reach both hands overhead and back to grip the foot in a deep backbend, elbows pointing up.' }
+                }
+            },
+            {
+                id: 'high_lunge',
+                englishName: 'High Crescent Lunge',
+                sanskritName: 'Aṣṭa Candrāsana',
+                category: 'Standing & Balance',
+                target: 'Quadriceps',
+                prereq: 'Downward Dog',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'High Lunge (Hands on Hips)', sanskritName: 'Sālamba Aṣṭa Candrāsana', level: 'Beginner', intensity: 4, cues: 'Keep hands on hips to check that the hips stay square while the back heel lifts.' },
+                    regressed_2: { category: 'regressed', englishName: 'Chair-Supported Lunge', sanskritName: 'Pīṭha Aṣṭa Candrāsana', level: 'Beginner', intensity: 3, cues: 'Rest both hands on the back of a chair to build lunge strength with less balance demand.' },
+                    standard_1: { category: 'standard', englishName: 'High Crescent Lunge (Standard)', sanskritName: 'Aṣṭa Candrāsana', level: 'Intermediate', intensity: 6, cues: 'Back heel lifted, back leg straight, front knee over ankle, arms overhead and hips square.' },
+                    advanced_1: { category: 'advanced', englishName: 'Pulsing High Lunge', sanskritName: 'Chala Aṣṭa Candrāsana', level: 'Intermediate', intensity: 7, cues: 'Lower and lift the hips a few inches in a steady rhythm while the back leg stays straight.' },
+                    advanced_2: { category: 'advanced', englishName: 'Revolved Prayer Lunge', sanskritName: 'Parivṛtta Aṣṭa Candrāsana', level: 'Advanced', intensity: 8, cues: 'Hook the elbow outside the front knee in a prayer twist while the back leg stays strong and the heel lifted.' }
+                }
+            },
 
             // 3. INVERSIONS & ARM BALANCES
             {
@@ -1554,6 +1675,81 @@
                     advanced_2: { category: 'advanced', englishName: 'Eagle Legs Headstand', sanskritName: 'Garuḍa Śīrṣāsana', level: 'Advanced', intensity: 9, cues: 'Invert into freestanding headstand, then entwine legs into Eagle binding while maintaining stack.' }
                 }
             },
+            {
+                id: 'handstand',
+                englishName: 'Handstand',
+                sanskritName: 'Adho Mukha Vṛkṣāsana',
+                category: 'Inversions & Arm Balances',
+                target: 'Shoulders',
+                prereq: 'Dolphin Pose & Wall Walks',
+                activeModifier: 'regressed_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Wall Walk Handstand (Chest to Wall)', sanskritName: 'Bhitti Adho Mukha Vṛkṣāsana', level: 'Intermediate', intensity: 7, cues: 'Walk the feet up the wall from plank until the chest faces the wall, ribs drawn in and shoulders pressing tall.' },
+                    regressed_2: { category: 'regressed', englishName: 'L-Shape Handstand Hold', sanskritName: 'Ardha Adho Mukha Vṛkṣāsana', level: 'Intermediate', intensity: 6, cues: 'Place feet on a wall at hip height so torso and legs form an L, pressing the floor away through open shoulders.' },
+                    standard_1: { category: 'standard', englishName: 'Handstand (Freestanding)', sanskritName: 'Adho Mukha Vṛkṣāsana', level: 'Advanced', intensity: 9, cues: 'Hands shoulder-width, stack wrists, shoulders, hips and ankles, spread fingers to correct balance and squeeze legs together.' },
+                    advanced_1: { category: 'advanced', englishName: 'Handstand Scissor Legs', sanskritName: 'Chala Adho Mukha Vṛkṣāsana', level: 'Master', intensity: 10, cues: 'From a steady handstand, split the legs in a slow scissor while keeping ribs tucked and shoulders pressed.' }
+                }
+            },
+            {
+                id: 'dolphin_pose',
+                englishName: 'Dolphin Pose',
+                sanskritName: 'Ardha Pincha Mayūrāsana',
+                category: 'Inversions & Arm Balances',
+                target: 'Shoulders',
+                prereq: 'Downward Dog',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Dolphin (Bent Knees)', sanskritName: 'Sūkṣma Ardha Pincha Mayūrāsana', level: 'Beginner', intensity: 4, cues: 'Bend knees to keep the spine long while forearms press firmly into the mat.' },
+                    standard_1: { category: 'standard', englishName: 'Dolphin Pose (Standard)', sanskritName: 'Ardha Pincha Mayūrāsana', level: 'Intermediate', intensity: 5, cues: 'Forearms parallel and shoulder-width, hips high, press forearms down and lengthen from wrists to tailbone.' },
+                    advanced_1: { category: 'advanced', englishName: 'Dolphin Push-Up', sanskritName: 'Chala Ardha Pincha Mayūrāsana', level: 'Intermediate', intensity: 7, cues: 'Shift forward into a forearm plank and press back up to dolphin with control.' },
+                    advanced_2: { category: 'advanced', englishName: 'Three-Legged Dolphin', sanskritName: 'Eka Pāda Ardha Pincha Mayūrāsana', level: 'Advanced', intensity: 8, cues: 'Lift one leg straight back and up while keeping hips square and forearms pressing down.' }
+                }
+            },
+            {
+                id: 'plow_pose',
+                englishName: 'Plow Pose',
+                sanskritName: 'Halāsana',
+                category: 'Inversions & Arm Balances',
+                target: 'Back',
+                prereq: 'Shoulderstand',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Plow with Feet on Chair', sanskritName: 'Sālamba Halāsana', level: 'Beginner', intensity: 4, cues: 'Rest the feet on a chair seat behind the head with a folded blanket under the shoulders.' },
+                    regressed_2: { category: 'regressed', englishName: 'Half Plow (Legs at 45 Degrees)', sanskritName: 'Ardha Halāsana', level: 'Beginner', intensity: 3, cues: 'Lower straight legs only halfway behind you while hands support the back.' },
+                    standard_1: { category: 'standard', englishName: 'Plow Pose (Standard)', sanskritName: 'Halāsana', level: 'Intermediate', intensity: 6, cues: 'Lower toes to the floor behind the head, hands supporting the back or interlaced on the floor, neck still and neutral.' },
+                    advanced_1: { category: 'advanced', englishName: 'Knees-to-Ears Pose', sanskritName: 'Karṇapīḍāsana', level: 'Advanced', intensity: 7, cues: 'From plow, bend the knees to the floor beside the ears and relax the shins.' },
+                    advanced_2: { category: 'advanced', englishName: 'Wide-Leg Plow', sanskritName: 'Supta Koṇāsana', level: 'Intermediate', intensity: 7, cues: 'Spread straight legs wide on the floor behind the head while keeping the hips stacked over the shoulders.' }
+                }
+            },
+            {
+                id: 'firefly_pose',
+                englishName: 'Firefly Pose',
+                sanskritName: 'Tittibhāsana',
+                category: 'Inversions & Arm Balances',
+                target: 'Core/Abs',
+                prereq: 'Crow Pose & Garland',
+                activeModifier: 'regressed_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Firefly Prep (Shoulder Hug Squat)', sanskritName: 'Pūrva Tittibhāsana', level: 'Intermediate', intensity: 6, cues: 'From a squat, thread shoulders behind the knees, plant hands and lean weight back onto the sit bones.' },
+                    regressed_2: { category: 'regressed', englishName: 'Block-Elevated Firefly', sanskritName: 'Sālamba Tittibhāsana', level: 'Intermediate', intensity: 7, cues: 'Place hands on blocks to gain lift and room for the legs to clear the floor.' },
+                    standard_1: { category: 'standard', englishName: 'Firefly Pose (Standard)', sanskritName: 'Tittibhāsana', level: 'Advanced', intensity: 9, cues: 'Settle thighs high on the upper arms, press up and straighten the legs forward with flexed feet.' },
+                    advanced_1: { category: 'advanced', englishName: 'Firefly to Crow Float', sanskritName: 'Tittibhāsana to Bakāsana', level: 'Master', intensity: 10, cues: 'From firefly, bend the knees and float the legs back into Crow without lowering the feet.' }
+                }
+            },
+            {
+                id: 'peacock_pose',
+                englishName: 'Peacock Pose',
+                sanskritName: 'Mayūrāsana',
+                category: 'Inversions & Arm Balances',
+                target: 'Core/Abs',
+                prereq: 'Crow Pose & Forearm Plank',
+                activeModifier: 'regressed_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Elbows-in-Belly Peacock Prep', sanskritName: 'Pūrva Mayūrāsana', level: 'Intermediate', intensity: 6, cues: 'Kneel with hands turned back toward the feet, press elbows into the belly and lean the weight forward.' },
+                    standard_1: { category: 'standard', englishName: 'Peacock Pose (Standard)', sanskritName: 'Mayūrāsana', level: 'Advanced', intensity: 9, cues: 'Press elbows into the abdomen, lean forward and lift both legs to horizontal behind you.' },
+                    advanced_1: { category: 'advanced', englishName: 'Lotus Peacock', sanskritName: 'Padma Mayūrāsana', level: 'Master', intensity: 10, cues: 'From Peacock, cross the legs into lotus while holding the arm balance.' }
+                }
+            },
 
             // 4. BACKBENDS & HEART OPENERS
             {
@@ -1641,6 +1837,35 @@
                     standard_1: { category: 'standard', englishName: 'Camel Pose (Standard)', sanskritName: 'Uṣṭrāsana', level: 'Intermediate', intensity: 6, cues: 'Reach hands back to grip heels, pressing hips forward over knees and lifting sternum skyward.' },
                     advanced_1: { category: 'advanced', englishName: 'Full Camel Dropback', sanskritName: 'Pūrṇa Uṣṭrāsana', level: 'Advanced', intensity: 8, cues: 'Reach fingertips down to mat behind feet into deep backbend arc.' },
                     advanced_2: { category: 'advanced', englishName: 'One-Legged Elevated Camel', sanskritName: 'Eka Pāda Uṣṭrāsana', level: 'Advanced', intensity: 9, cues: 'Extend one leg straight out in front while arching into backbend grip on opposite heel.' }
+                }
+            },
+            {
+                id: 'locust_pose',
+                englishName: 'Locust Pose',
+                sanskritName: 'Śalabhāsana',
+                category: 'Backbends & Heart Openers',
+                target: 'Back',
+                prereq: 'Cobra Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Half Locust (One Leg)', sanskritName: 'Ardha Śalabhāsana', level: 'Beginner', intensity: 3, cues: 'Lift one leg at a time while the arms rest alongside the body and the pelvis stays heavy.' },
+                    standard_1: { category: 'standard', englishName: 'Locust Pose (Standard)', sanskritName: 'Śalabhāsana', level: 'Intermediate', intensity: 5, cues: 'Lie prone, lift chest, arms and both legs together, reaching long through fingertips and toes.' },
+                    advanced_1: { category: 'advanced', englishName: 'Locust with Clasped Hands', sanskritName: 'Pūrṇa Śalabhāsana', level: 'Advanced', intensity: 7, cues: 'Interlace hands behind the back, draw them toward the heels and lift the chest and both legs higher.' }
+                }
+            },
+            {
+                id: 'fish_pose',
+                englishName: 'Fish Pose',
+                sanskritName: 'Matsyāsana',
+                category: 'Backbends & Heart Openers',
+                target: 'Chest',
+                prereq: 'Bridge Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Supported Fish (Bolster)', sanskritName: 'Sālamba Matsyāsana', level: 'Beginner', intensity: 2, cues: 'Lie back over a bolster placed lengthwise along the spine, arms open and neck supported.' },
+                    standard_1: { category: 'standard', englishName: 'Fish Pose (Standard)', sanskritName: 'Matsyāsana', level: 'Intermediate', intensity: 5, cues: 'Press forearms down to lift the chest and rest the crown lightly on the floor without putting weight on the head.' },
+                    advanced_1: { category: 'advanced', englishName: 'Fish with Raised Legs', sanskritName: 'Uttāna Pāda Matsyāsana', level: 'Advanced', intensity: 7, cues: 'In Fish, lift straight legs about 45 degrees and reach arms toward the feet.' },
+                    advanced_2: { category: 'advanced', englishName: 'Lotus Fish', sanskritName: 'Padma Matsyāsana', level: 'Advanced', intensity: 8, cues: 'Sit the legs in lotus and arch back into Fish, holding the feet or toes with the hands.' }
                 }
             },
 
@@ -1742,6 +1967,97 @@
                     advanced_2: { category: 'advanced', englishName: 'King Pigeon Pose (Full Overhead Grip)', sanskritName: 'Pūrṇa Eka Pāda Rājakapotāsana', level: 'Advanced', intensity: 9, cues: 'Bend back leg up, reach both hands overhead to capture back foot in full King Pigeon bind.' }
                 }
             },
+            {
+                id: 'low_lunge',
+                englishName: 'Low Lunge',
+                sanskritName: 'Anjaneyāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hips',
+                prereq: 'Downward Dog',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Low Lunge (Hands on Blocks)', sanskritName: 'Sālamba Anjaneyāsana', level: 'Beginner', intensity: 3, cues: 'Place hands on blocks beside the front foot and pad the back knee with a blanket.' },
+                    standard_1: { category: 'standard', englishName: 'Low Lunge (Standard)', sanskritName: 'Anjaneyāsana', level: 'Beginner', intensity: 4, cues: 'Back knee down, front knee over ankle, sink hips forward and reach arms overhead with ribs drawn in.' },
+                    advanced_1: { category: 'advanced', englishName: 'Low Lunge Quad Stretch', sanskritName: 'Eka Pāda Anjaneyāsana', level: 'Intermediate', intensity: 6, cues: 'Reach back to hold the back foot, drawing the heel toward the glute while the hips stay square.' },
+                    advanced_2: { category: 'advanced', englishName: 'Low Lunge Backbend', sanskritName: 'Ūrdhva Anjaneyāsana', level: 'Advanced', intensity: 7, cues: 'Lift the chest and reach arms up and back into a gentle thoracic backbend while the pelvis stays tucked.' }
+                }
+            },
+            {
+                id: 'lizard_pose',
+                englishName: 'Lizard Pose',
+                sanskritName: 'Utthan Pṛṣṭhāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hips',
+                prereq: 'Low Lunge',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Lizard (Hands on Blocks)', sanskritName: 'Sālamba Utthan Pṛṣṭhāsana', level: 'Beginner', intensity: 4, cues: 'Keep hands on blocks inside the front foot to hold the chest higher.' },
+                    regressed_2: { category: 'regressed', englishName: 'Lizard with Back Knee Down', sanskritName: 'Jānu Utthan Pṛṣṭhāsana', level: 'Beginner', intensity: 4, cues: 'Lower the back knee to a padded mat to ease hip flexor and quad load.' },
+                    standard_1: { category: 'standard', englishName: 'Lizard Pose (Standard)', sanskritName: 'Utthan Pṛṣṭhāsana', level: 'Intermediate', intensity: 6, cues: 'Forearms to floor inside the front foot, back knee lifted, hips low and chest long.' },
+                    advanced_1: { category: 'advanced', englishName: 'Lizard Quad Stretch', sanskritName: 'Eka Pāda Utthan Pṛṣṭhāsana', level: 'Advanced', intensity: 8, cues: 'Reach back to hold the back foot and draw it toward the glute while holding the low lunge shape.' },
+                    advanced_2: { category: 'advanced', englishName: 'Flying Lizard', sanskritName: 'Ūrdhva Utthan Pṛṣṭhāsana', level: 'Advanced', intensity: 9, cues: 'Lift the back leg off the floor and hover it while the front-hip stays open and the chest stays long.' }
+                }
+            },
+            {
+                id: 'lotus_pose',
+                englishName: 'Lotus Pose',
+                sanskritName: 'Padmāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hips',
+                prereq: 'Cobbler Pose & Half Lotus',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Easy Pose', sanskritName: 'Sukhāsana', level: 'Beginner', intensity: 2, cues: 'Cross the shins comfortably and sit on a folded blanket so the knees rest below the hips.' },
+                    regressed_2: { category: 'regressed', englishName: 'Half Lotus', sanskritName: 'Ardha Padmāsana', level: 'Intermediate', intensity: 6, cues: 'Place one foot on the opposite thigh crease with the other shin tucked under, keeping the knee pain free.' },
+                    standard_1: { category: 'standard', englishName: 'Full Lotus (Standard)', sanskritName: 'Padmāsana', level: 'Advanced', intensity: 8, cues: 'Bring both feet onto opposite thighs only if the hips rotate freely and the knees stay comfortable.' },
+                    advanced_1: { category: 'advanced', englishName: 'Lotus Forward Fold', sanskritName: 'Yoga Mudrā', level: 'Advanced', intensity: 8, cues: 'In full lotus, bind the hands behind the back and fold forward over the legs with a long spine.' }
+                }
+            },
+            {
+                id: 'happy_baby',
+                englishName: 'Happy Baby Pose',
+                sanskritName: 'Ānanda Bālāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hips',
+                prereq: 'None',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Happy Baby (Holding Thighs)', sanskritName: 'Sālamba Ānanda Bālāsana', level: 'Beginner', intensity: 2, cues: 'Hold the backs of the thighs or shins if the feet are out of reach.' },
+                    standard_1: { category: 'standard', englishName: 'Happy Baby Pose (Standard)', sanskritName: 'Ānanda Bālāsana', level: 'Beginner', intensity: 3, cues: 'Hold the outer feet with knees wide toward the armpits and press the feet into the hands.' },
+                    advanced_1: { category: 'advanced', englishName: 'Rocking Happy Baby', sanskritName: 'Chala Ānanda Bālāsana', level: 'Beginner', intensity: 3, cues: 'Gently rock side to side to massage the lower back and sacrum.' },
+                    advanced_2: { category: 'advanced', englishName: 'Happy Baby Leg Extension', sanskritName: 'Ūrdhva Prasārita Ānanda Bālāsana', level: 'Intermediate', intensity: 5, cues: 'Straighten the legs toward the ceiling while holding the feet and keeping the tailbone heavy.' }
+                }
+            },
+            {
+                id: 'seated_forward_fold',
+                englishName: 'Seated Forward Fold',
+                sanskritName: 'Paścimottānāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hamstrings',
+                prereq: 'Staff Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Seated Fold (Bent Knees on Bolster)', sanskritName: 'Sālamba Paścimottānāsana', level: 'Beginner', intensity: 3, cues: 'Bend the knees over a bolster and fold the torso to rest on the thighs.' },
+                    regressed_2: { category: 'regressed', englishName: 'Strap-Assisted Seated Fold', sanskritName: 'Pāśa Paścimottānāsana', level: 'Beginner', intensity: 4, cues: 'Loop a strap around the feet and walk the hands up it as the spine lengthens.' },
+                    standard_1: { category: 'standard', englishName: 'Seated Forward Fold (Standard)', sanskritName: 'Paścimottānāsana', level: 'Intermediate', intensity: 5, cues: 'Hinge from the hips with a long spine, hold the feet or shins and lead with the chest.' },
+                    advanced_1: { category: 'advanced', englishName: 'Seated Fold with Hand Bind', sanskritName: 'Baddha Paścimottānāsana', level: 'Advanced', intensity: 7, cues: 'Grip the wrists beyond the feet and fold the torso fully over straight legs.' }
+                }
+            },
+            {
+                id: 'reclined_big_toe',
+                englishName: 'Reclined Hand-to-Big-Toe Pose',
+                sanskritName: 'Supta Pādāṅguṣṭhāsana',
+                category: 'Hip Openers & Seated',
+                target: 'Hamstrings',
+                prereq: 'None',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Strap-Assisted Reclined Leg Stretch', sanskritName: 'Sālamba Supta Pādāṅguṣṭhāsana', level: 'Beginner', intensity: 3, cues: 'Loop a strap around the lifted foot and keep the opposite leg bent with the foot on the floor.' },
+                    standard_1: { category: 'standard', englishName: 'Reclined Hand-to-Big-Toe (Standard)', sanskritName: 'Supta Pādāṅguṣṭhāsana A', level: 'Beginner', intensity: 4, cues: 'Lie on the back, lift one leg straight and hold the big toe while the other leg stays long on the mat.' },
+                    advanced_1: { category: 'advanced', englishName: 'Reclined Side-Leg Split', sanskritName: 'Supta Pādāṅguṣṭhāsana B', level: 'Intermediate', intensity: 6, cues: 'Open the raised leg out to the side while the opposite hip stays grounded.' },
+                    advanced_2: { category: 'advanced', englishName: 'Reclined Head-to-Knee Pull', sanskritName: 'Ūrdhva Mukha Supta Pādāṅguṣṭhāsana', level: 'Advanced', intensity: 7, cues: 'Draw the straight leg toward the face while lifting the head to meet the shin.' }
+                }
+            },
 
             // 6. CORE & TWISTS
             {
@@ -1817,6 +2133,66 @@
                     advanced_1: { category: 'advanced', englishName: 'Full Bound Seated Twist', sanskritName: 'Baddha Ardha Matsyendrāsana', level: 'Advanced', intensity: 8, cues: 'Thread front arm through knee gap to clasp back hand behind lower back in full bind.' },
                     advanced_2: { category: 'advanced', englishName: 'Bound Lotus Twist', sanskritName: 'Padma Ardha Matsyendrāsana', level: 'Master', intensity: 9, cues: 'Place bottom leg into half-lotus while binding top wrist around back waist.' }
                 }
+            },
+            {
+                id: 'reclined_twist',
+                englishName: 'Reclined Spinal Twist',
+                sanskritName: 'Supta Matsyendrāsana',
+                category: 'Core & Twists',
+                target: 'Back',
+                prereq: 'None',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Bolster-Supported Twist', sanskritName: 'Sālamba Supta Matsyendrāsana', level: 'Beginner', intensity: 2, cues: 'Rest the bent knees on a bolster or blanket so the shoulders can stay grounded.' },
+                    standard_1: { category: 'standard', englishName: 'Reclined Spinal Twist (Standard)', sanskritName: 'Supta Matsyendrāsana', level: 'Beginner', intensity: 3, cues: 'Hug the knees, drop them to one side, open the arms into a T and look in the opposite direction.' },
+                    advanced_1: { category: 'advanced', englishName: 'Revolving Belly Twist', sanskritName: 'Jaṭhara Parivartanāsana', level: 'Intermediate', intensity: 5, cues: 'Lift both straight legs to vertical and lower them to one side while the shoulders stay grounded.' },
+                    advanced_2: { category: 'advanced', englishName: 'Eagle-Leg Reclined Twist', sanskritName: 'Supta Garuḍa Matsyendrāsana', level: 'Intermediate', intensity: 6, cues: 'Cross one thigh over the other in Eagle legs and twist both knees across the body.' }
+                }
+            },
+            {
+                id: 'bird_dog',
+                englishName: 'Bird Dog',
+                sanskritName: 'Daṇḍāyamāna Bharmaṇāsana',
+                category: 'Core & Twists',
+                target: 'Core/Abs',
+                prereq: 'Tabletop Hold',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Bird Dog (Leg Only)', sanskritName: 'Eka Pāda Bharmaṇāsana', level: 'Beginner', intensity: 2, cues: 'Extend one leg at a time while both hands stay planted and the pelvis stays level.' },
+                    standard_1: { category: 'standard', englishName: 'Bird Dog (Standard)', sanskritName: 'Daṇḍāyamāna Bharmaṇāsana', level: 'Beginner', intensity: 3, cues: 'Extend the opposite arm and leg level with the torso, hips square and neck neutral.' },
+                    advanced_1: { category: 'advanced', englishName: 'Bird Dog Elbow-to-Knee Crunch', sanskritName: 'Saṅkucita Bharmaṇāsana', level: 'Intermediate', intensity: 5, cues: 'Draw the elbow to the knee beneath the torso, round the spine, then extend again.' },
+                    advanced_2: { category: 'advanced', englishName: 'Bird Dog with Hovering Knees', sanskritName: 'Utplutih Bharmaṇāsana', level: 'Advanced', intensity: 7, cues: 'Lift both knees an inch off the mat before extending the opposite arm and leg.' }
+                }
+            },
+            {
+                id: 'chair_twist',
+                englishName: 'Revolved Chair Pose',
+                sanskritName: 'Parivṛtta Utkaṭāsana',
+                category: 'Core & Twists',
+                target: 'Core/Abs',
+                prereq: 'Chair Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Shallow Chair Twist', sanskritName: 'Sūkṣma Parivṛtta Utkaṭāsana', level: 'Beginner', intensity: 5, cues: 'Sit into a shallow squat with hands in prayer and twist gently from the upper back.' },
+                    standard_1: { category: 'standard', englishName: 'Revolved Chair Pose (Standard)', sanskritName: 'Parivṛtta Utkaṭāsana', level: 'Intermediate', intensity: 7, cues: 'Hook the elbow outside the opposite thigh, press palms together and rotate the ribs, knees even.' },
+                    advanced_1: { category: 'advanced', englishName: 'Bound Revolved Chair', sanskritName: 'Baddha Parivṛtta Utkaṭāsana', level: 'Advanced', intensity: 9, cues: 'Thread the lower arm under the thigh and clasp hands behind the back while keeping the squat deep.' },
+                    advanced_2: { category: 'advanced', englishName: 'Revolved Chair on Toes', sanskritName: 'Pādāṅguṣṭha Parivṛtta Utkaṭāsana', level: 'Advanced', intensity: 9, cues: 'Lift both heels while holding the prayer twist and keep the knees level.' }
+                }
+            },
+            {
+                id: 'revolved_triangle',
+                englishName: 'Revolved Triangle',
+                sanskritName: 'Parivṛtta Trikoṇāsana',
+                category: 'Core & Twists',
+                target: 'Hamstrings',
+                prereq: 'Triangle Pose',
+                activeModifier: 'standard_1',
+                modifiers: {
+                    regressed_1: { category: 'regressed', englishName: 'Revolved Triangle (Hand on Block)', sanskritName: 'Sālamba Parivṛtta Trikoṇāsana', level: 'Intermediate', intensity: 5, cues: 'Place the lower hand on a block inside the front foot so the twist comes from the spine.' },
+                    regressed_2: { category: 'regressed', englishName: 'Revolved Triangle (Short Stance)', sanskritName: 'Sūkṣma Parivṛtta Trikoṇāsana', level: 'Beginner', intensity: 5, cues: 'Shorten the stance and widen the feet slightly on railway tracks to balance with ease.' },
+                    standard_1: { category: 'standard', englishName: 'Revolved Triangle (Standard)', sanskritName: 'Parivṛtta Trikoṇāsana', level: 'Advanced', intensity: 7, cues: 'Square the hips, hinge forward over the front leg and twist the opposite hand to the floor or shin.' },
+                    advanced_1: { category: 'advanced', englishName: 'Bound Revolved Triangle', sanskritName: 'Baddha Parivṛtta Trikoṇāsana', level: 'Advanced', intensity: 9, cues: 'Thread the lower arm under the front thigh and clasp the hand behind the back while twisting.' }
+                }
             }
         ];
 
@@ -1825,7 +2201,7 @@
             {
                 id: 'bw_pike_pushups',
                 title: 'Elevated Pike Push-Ups',
-                tiedPoseIds: ['crow_pose', 'downward_dog', 'headstand', 'forearm_stand'],
+                tiedPoseIds: ['crow_pose', 'downward_dog', 'headstand', 'forearm_stand', 'handstand', 'dolphin_pose'],
                 target: 'Shoulders',
                 level: 'Intermediate',
                 type: 'Dynamic Overhead Push',
@@ -1843,7 +2219,7 @@
             {
                 id: 'bw_scapular_pushups',
                 title: 'Scapular Protraction Push-Ups',
-                tiedPoseIds: ['downward_dog', 'plank_pose', 'crow_pose', 'side_plank'],
+                tiedPoseIds: ['downward_dog', 'plank_pose', 'crow_pose', 'side_plank', 'handstand', 'dolphin_pose', 'peacock_pose', 'firefly_pose'],
                 target: 'Shoulders',
                 level: 'Beginner',
                 type: 'Serratus Activation',
@@ -1860,7 +2236,7 @@
             {
                 id: 'bw_handstand_wall_walks',
                 title: 'Handstand Wall Walks & Holds',
-                tiedPoseIds: ['headstand', 'crow_pose', 'plank_pose', 'forearm_stand'],
+                tiedPoseIds: ['headstand', 'crow_pose', 'plank_pose', 'forearm_stand', 'handstand', 'dolphin_pose'],
                 target: 'Shoulders',
                 level: 'Advanced',
                 type: 'Inverted Overhead Compression',
@@ -1878,7 +2254,7 @@
             {
                 id: 'bw_archer_pushups',
                 title: 'Unilateral Archer Push-Ups',
-                tiedPoseIds: ['plank_pose', 'crow_pose', 'side_plank'],
+                tiedPoseIds: ['plank_pose', 'crow_pose', 'side_plank', 'peacock_pose', 'firefly_pose'],
                 target: 'Chest',
                 level: 'Advanced',
                 type: 'Asymmetric Pressing',
@@ -1895,7 +2271,7 @@
             {
                 id: 'bw_hollow_body_hold',
                 title: 'Hollow Body Isometric Hold',
-                tiedPoseIds: ['boat_pose', 'headstand', 'plank_pose', 'scale_pose'],
+                tiedPoseIds: ['boat_pose', 'headstand', 'plank_pose', 'scale_pose', 'staff_pose', 'plow_pose', 'firefly_pose', 'handstand', 'peacock_pose', 'bird_dog'],
                 target: 'Core/Abs',
                 level: 'Intermediate',
                 type: 'Isometric Core Compression',
@@ -1913,7 +2289,7 @@
             {
                 id: 'bw_lsit_progression',
                 title: 'Seated L-Sit Compression Pulls',
-                tiedPoseIds: ['boat_pose', 'crow_pose', 'half_lord_fishes', 'scale_pose', 'eight_angle'],
+                tiedPoseIds: ['boat_pose', 'crow_pose', 'half_lord_fishes', 'scale_pose', 'eight_angle', 'staff_pose', 'firefly_pose', 'lotus_pose'],
                 target: 'Core/Abs',
                 level: 'Advanced',
                 type: 'Hip Flexor & Core Lock',
@@ -1930,7 +2306,7 @@
             {
                 id: 'bw_v_up_crunches',
                 title: 'Dynamic Jackknife V-Ups',
-                tiedPoseIds: ['boat_pose', 'warrior_two', 'scale_pose'],
+                tiedPoseIds: ['boat_pose', 'warrior_two', 'scale_pose', 'staff_pose', 'plow_pose', 'firefly_pose'],
                 target: 'Core/Abs',
                 level: 'Advanced',
                 type: 'Dynamic Abdominal Flexion',
@@ -1948,7 +2324,7 @@
             {
                 id: 'bw_russian_twists',
                 title: 'Elevated Seated Oblique Twists',
-                tiedPoseIds: ['half_lord_fishes', 'boat_pose', 'revolved_side_angle', 'side_crow'],
+                tiedPoseIds: ['half_lord_fishes', 'boat_pose', 'revolved_side_angle', 'side_crow', 'chair_twist', 'revolved_triangle', 'reclined_twist'],
                 target: 'Core/Abs',
                 level: 'Intermediate',
                 type: 'Rotational Core Stability',
@@ -1965,7 +2341,7 @@
             {
                 id: 'bw_cossack_squats',
                 title: 'Dynamic Cossack Side Squats',
-                tiedPoseIds: ['warrior_two', 'triangle_pose', 'cobbler_pose', 'extended_side_angle'],
+                tiedPoseIds: ['warrior_two', 'triangle_pose', 'cobbler_pose', 'extended_side_angle', 'goddess_pose', 'wide_legged_fold', 'lizard_pose', 'low_lunge'],
                 target: 'Quadriceps',
                 level: 'Intermediate',
                 type: 'Frontal Plane Mobility',
@@ -1983,7 +2359,7 @@
             {
                 id: 'bw_pistol_squat_prog',
                 title: 'Single-Leg Box Pistol Squat',
-                tiedPoseIds: ['warrior_one', 'warrior_two', 'warrior_three', 'tree_pose'],
+                tiedPoseIds: ['warrior_one', 'warrior_two', 'warrior_three', 'tree_pose', 'chair_pose', 'high_lunge', 'dancer_pose', 'low_lunge', 'chair_twist'],
                 target: 'Quadriceps',
                 level: 'Advanced',
                 type: 'Unilateral Quadriceps Power',
@@ -2000,7 +2376,7 @@
             {
                 id: 'bw_curtsy_lunges',
                 title: 'Curtsy Lunge Glute Medius Pulses',
-                tiedPoseIds: ['triangle_pose', 'warrior_two', 'eagle_pose', 'cow_face_pose'],
+                tiedPoseIds: ['triangle_pose', 'warrior_two', 'eagle_pose', 'cow_face_pose', 'goddess_pose', 'high_lunge', 'chair_twist', 'revolved_triangle', 'lizard_pose'],
                 target: 'Hips',
                 level: 'Intermediate',
                 type: 'Hip Stabilizer Conditioning',
@@ -2018,7 +2394,7 @@
             {
                 id: 'bw_superman_holds',
                 title: 'Prone Arch Body / Superman Holds',
-                tiedPoseIds: ['cobra_pose', 'camel_pose', 'bow_pose', 'wheel_pose', 'upward_dog', 'wild_thing'],
+                tiedPoseIds: ['cobra_pose', 'camel_pose', 'bow_pose', 'wheel_pose', 'upward_dog', 'wild_thing', 'locust_pose', 'fish_pose', 'bird_dog', 'dancer_pose'],
                 target: 'Back',
                 level: 'Beginner',
                 type: 'Posterior Spinal Extension',
@@ -2035,7 +2411,7 @@
             {
                 id: 'bw_reverse_plank',
                 title: 'Reverse Plank Posterior Lockout',
-                tiedPoseIds: ['cobra_pose', 'camel_pose', 'plank_pose', 'wheel_pose', 'upward_dog'],
+                tiedPoseIds: ['cobra_pose', 'camel_pose', 'plank_pose', 'wheel_pose', 'upward_dog', 'fish_pose', 'staff_pose', 'locust_pose'],
                 target: 'Back',
                 level: 'Intermediate',
                 type: 'Posterior Chain Isometric',
@@ -2052,7 +2428,7 @@
             {
                 id: 'bw_glute_ham_walkouts',
                 title: 'Bridge Hamstring Heel Walkouts',
-                tiedPoseIds: ['camel_pose', 'cobra_pose', 'pigeon_pose', 'bridge_pose', 'wheel_pose', 'bow_pose'],
+                tiedPoseIds: ['camel_pose', 'cobra_pose', 'pigeon_pose', 'bridge_pose', 'wheel_pose', 'bow_pose', 'forward_fold', 'pyramid_pose', 'seated_forward_fold', 'wide_legged_fold', 'reclined_big_toe', 'locust_pose', 'dancer_pose'],
                 target: 'Hamstrings',
                 level: 'Intermediate',
                 type: 'Eccentric Hamstring Conditioning',
@@ -2069,7 +2445,7 @@
             {
                 id: 'bw_dolphin_pushups',
                 title: 'Forearm Dolphin Dynamic Press-Ups',
-                tiedPoseIds: ['headstand', 'downward_dog', 'crow_pose', 'forearm_stand'],
+                tiedPoseIds: ['headstand', 'downward_dog', 'crow_pose', 'forearm_stand', 'dolphin_pose', 'handstand', 'peacock_pose', 'firefly_pose'],
                 target: 'Shoulders',
                 level: 'Intermediate',
                 type: 'Scapular Overhead Endurance',
@@ -2082,6 +2458,298 @@
                     'Press forearms forcefully into mat to drive hips back up to Dolphin position.'
                 ],
                 tips: 'Builds vital shoulder girdle stabilization necessary to support weight in inversions.'
+            },
+            {
+                id: 'bw_wall_sit',
+                title: 'Isometric Wall Sit',
+                tiedPoseIds: ['chair_pose', 'goddess_pose', 'warrior_two', 'high_lunge'],
+                target: 'Quadriceps',
+                level: 'Beginner',
+                type: 'Isometric Quad Endurance',
+                intensity: 6,
+                targetReps: '3 Sets x 30-45 Sec Hold',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lean back against a wall and walk the feet out until the knees can bend to 90 degrees.',
+                    'Slide down until the thighs are parallel to the floor with knees stacked over the ankles.',
+                    'Press the lower back into the wall and hold with steady breathing.'
+                ],
+                tips: 'Keep weight in the heels and stop if you feel sharp pain at the front of the knee.'
+            },
+            {
+                id: 'bw_single_leg_bridge',
+                title: 'Single-Leg Glute Bridge',
+                tiedPoseIds: ['bridge_pose', 'wheel_pose', 'dancer_pose', 'warrior_three', 'locust_pose'],
+                target: 'Hips',
+                level: 'Intermediate',
+                type: 'Unilateral Glute Strength',
+                intensity: 6,
+                targetReps: '3 Sets x 10 Reps / side',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lie on the back with one foot flat and the other leg extended straight up or hovering.',
+                    'Press through the planted heel to lift the hips until the body forms a line from shoulder to knee.',
+                    'Pause for a second with the hips level, then lower slowly.'
+                ],
+                tips: 'Keep the pelvis level; if one hip drops, lower the working leg slightly or bend the lifted knee.'
+            },
+            {
+                id: 'bw_bird_dog_crunch',
+                title: 'Bird Dog Elbow-to-Knee Crunches',
+                tiedPoseIds: ['bird_dog', 'plank_pose', 'side_plank', 'cat_cow_pose'],
+                target: 'Core/Abs',
+                level: 'Beginner',
+                type: 'Anti-Rotation Core',
+                intensity: 4,
+                targetReps: '3 Sets x 8 Reps / side',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Start on hands and knees with wrists under shoulders and knees under hips.',
+                    'Extend the right arm forward and the left leg back in line with the torso.',
+                    'Round the spine and draw the right elbow to the left knee beneath you.',
+                    'Extend again with control and finish all reps before switching sides.'
+                ],
+                tips: 'Move slowly and keep the hips square so the core, not momentum, does the work.'
+            },
+            {
+                id: 'bw_dead_bug',
+                title: 'Dead Bug',
+                tiedPoseIds: ['boat_pose', 'plank_pose', 'handstand', 'peacock_pose'],
+                target: 'Core/Abs',
+                level: 'Beginner',
+                type: 'Lumbar Control Core',
+                intensity: 4,
+                targetReps: '3 Sets x 10 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lie on the back with arms pointing to the ceiling and hips and knees bent at 90 degrees.',
+                    'Press the lower back gently into the mat and exhale.',
+                    'Lower the right arm overhead and the left leg toward the floor without letting the back arch.',
+                    'Return to start and repeat on the opposite side.'
+                ],
+                tips: 'Reduce the range of motion if the lower back lifts off the floor.'
+            },
+            {
+                id: 'bw_planche_lean',
+                title: 'Planche Lean Holds',
+                tiedPoseIds: ['crow_pose', 'peacock_pose', 'firefly_pose', 'side_crow', 'handstand'],
+                target: 'Shoulders',
+                level: 'Advanced',
+                type: 'Straight-Arm Protraction Strength',
+                intensity: 8,
+                targetReps: '4 Sets x 15-20 Sec Hold',
+                defaultDurationSecs: 30,
+                steps: [
+                    'Start in a high plank with hands turned slightly outward.',
+                    'Protract the shoulders and lean forward until the shoulders move past the wrists.',
+                    'Keep the arms straight, glutes tight and body in one line, and hold.'
+                ],
+                tips: 'Build up gradually because the wrists and biceps tendons take significant load.'
+            },
+            {
+                id: 'bw_chair_dips',
+                title: 'Chair Tricep Dips',
+                tiedPoseIds: ['plank_pose', 'crow_pose', 'peacock_pose', 'firefly_pose'],
+                target: 'Shoulders',
+                level: 'Intermediate',
+                type: 'Tricep Pressing',
+                intensity: 6,
+                targetReps: '3 Sets x 10-12 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Sit on the edge of a sturdy chair and place hands beside the hips, then slide the hips off the seat.',
+                    'Bend the elbows straight back until the upper arms are parallel to the floor.',
+                    'Press through the palms to straighten the arms.'
+                ],
+                tips: 'Keep shoulders away from the ears and the hips close to the chair to protect the front of the shoulders.'
+            },
+            {
+                id: 'bw_chaturanga',
+                title: 'Slow Chaturanga Push-Ups',
+                tiedPoseIds: ['plank_pose', 'upward_dog', 'downward_dog', 'crow_pose', 'peacock_pose'],
+                target: 'Chest',
+                level: 'Intermediate',
+                type: 'Eccentric Pressing',
+                intensity: 6,
+                targetReps: '3 Sets x 8 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Begin in high plank with shoulders over wrists.',
+                    'Shift slightly forward and lower over four counts, elbows hugging the ribs.',
+                    'Stop with the elbows at 90 degrees and the shoulders level with the elbows.',
+                    'Press back to plank with control.'
+                ],
+                tips: 'Do not let the shoulders dip below the elbows; use knees down if form fades.'
+            },
+            {
+                id: 'bw_single_calf_raise',
+                title: 'Single-Leg Calf Raises',
+                tiedPoseIds: ['mountain_pose', 'tree_pose', 'dancer_pose', 'eagle_pose', 'chair_pose'],
+                target: 'Calves',
+                level: 'Beginner',
+                type: 'Calf & Ankle Strength',
+                intensity: 4,
+                targetReps: '3 Sets x 12-15 Reps / leg',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Stand on one foot near a wall for light balance support.',
+                    'Rise as high as possible onto the ball of the foot.',
+                    'Pause for one second, then lower over three counts.'
+                ],
+                tips: 'Keep the ankle stacked and avoid rolling to the outside edge of the foot.'
+            },
+            {
+                id: 'bw_hamstring_curl',
+                title: 'Towel Slide Hamstring Curls',
+                tiedPoseIds: ['forward_fold', 'pyramid_pose', 'warrior_three', 'wide_legged_fold', 'bridge_pose'],
+                target: 'Hamstrings',
+                level: 'Intermediate',
+                type: 'Eccentric Hamstring Control',
+                intensity: 7,
+                targetReps: '3 Sets x 8-10 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lie on the back with heels on a towel on a smooth floor and lift into a bridge.',
+                    'Slowly slide the heels away until the legs are nearly straight.',
+                    'Pull the heels back toward the glutes without letting the hips drop.'
+                ],
+                tips: 'Move slowly on the way out and stop short of full extension if cramping starts.'
+            },
+            {
+                id: 'bw_ytw_raises',
+                title: 'Prone Y-T-W Raises',
+                tiedPoseIds: ['locust_pose', 'fish_pose', 'camel_pose', 'cobra_pose', 'handstand'],
+                target: 'Back',
+                level: 'Beginner',
+                type: 'Scapular Retraction',
+                intensity: 4,
+                targetReps: '3 Sets x 8 Reps each shape',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lie face down with the forehead resting lightly on the mat.',
+                    'Lift the arms into a Y shape overhead and hold for one second.',
+                    'Lower, then lift into a T shape and then a W shape with the elbows bent.'
+                ],
+                tips: 'Lift with the upper back, keeping thumbs up and the neck long.'
+            },
+            {
+                id: 'bw_hip_airplane',
+                title: 'Hip Airplane Rotations',
+                tiedPoseIds: ['warrior_three', 'half_moon', 'dancer_pose', 'tree_pose', 'revolved_triangle'],
+                target: 'Hips',
+                level: 'Intermediate',
+                type: 'Hip Rotation Control',
+                intensity: 7,
+                targetReps: '3 Sets x 6-8 Reps / side',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Stand on one leg and hinge forward into a half-airplane position with hands on hips or out wide.',
+                    'Rotate the pelvis open toward the ceiling over the standing hip.',
+                    'Rotate back to square while holding balance, then repeat.'
+                ],
+                tips: 'Keep a soft bend in the standing knee and move only as far as you can control.'
+            },
+            {
+                id: 'bw_leg_raises',
+                title: 'Straight-Leg Raises',
+                tiedPoseIds: ['plow_pose', 'boat_pose', 'firefly_pose', 'scale_pose', 'staff_pose'],
+                target: 'Core/Abs',
+                level: 'Intermediate',
+                type: 'Lower Abdominal Strength',
+                intensity: 6,
+                targetReps: '3 Sets x 10-12 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Lie on the back with legs straight and palms pressing down beside the hips.',
+                    'Press the lower back into the floor and lift the legs to vertical.',
+                    'Lower slowly until the heels hover just above the floor.'
+                ],
+                tips: 'Bend the knees or lower the range if the lower back starts to arch.'
+            },
+            {
+                id: 'bw_pike_plank_taps',
+                title: 'Pike Plank Shoulder Taps',
+                tiedPoseIds: ['handstand', 'dolphin_pose', 'downward_dog', 'plank_pose'],
+                target: 'Shoulders',
+                level: 'Intermediate',
+                type: 'Shoulder Stability',
+                intensity: 6,
+                targetReps: '3 Sets x 20 Total Taps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Set up in a piked Downward Dog with feet hip-width.',
+                    'Shift the weight into the right hand and tap it to the left shoulder.',
+                    'Return the hand to the mat and alternate sides without letting the hips sway.'
+                ],
+                tips: 'Widen the feet if balance is difficult and keep pressing the floor away.'
+            },
+            {
+                id: 'bw_deep_squat_hold',
+                title: 'Deep Squat Hold with Prayer Press',
+                tiedPoseIds: ['garland_pose', 'goddess_pose', 'firefly_pose', 'happy_baby'],
+                target: 'Hips',
+                level: 'Beginner',
+                type: 'Hip & Ankle Endurance',
+                intensity: 4,
+                targetReps: '3 Sets x 45 Sec Hold',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Stand with feet slightly wider than the hips and toes turned out.',
+                    'Sink into a deep squat with heels down and palms together at the chest.',
+                    'Press the elbows into the knees and hold with steady breathing.'
+                ],
+                tips: 'Place a folded blanket under the heels if they lift off the floor.'
+            },
+            {
+                id: 'bw_side_plank_dips',
+                title: 'Side Plank Hip Dips',
+                tiedPoseIds: ['side_plank', 'extended_side_angle', 'half_moon', 'revolved_triangle'],
+                target: 'Core/Abs',
+                level: 'Intermediate',
+                type: 'Lateral Core Strength',
+                intensity: 6,
+                targetReps: '3 Sets x 12 Reps / side',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Set up in a forearm side plank with the elbow under the shoulder and legs stacked.',
+                    'Lower the bottom hip a few inches toward the mat.',
+                    'Lift back to a straight line by squeezing the bottom-side waist.'
+                ],
+                tips: 'Keep the torso facing forward and avoid sinking into the shoulder.'
+            },
+            {
+                id: 'bw_bear_crawl',
+                title: 'Bear Crawl Hold & Slow Crawl',
+                tiedPoseIds: ['bird_dog', 'plank_pose', 'crow_pose', 'cat_cow_pose'],
+                target: 'Core/Abs',
+                level: 'Beginner',
+                type: 'Quadruped Shoulder & Core',
+                intensity: 5,
+                targetReps: '3 Sets x 20 Sec Hold + 10 Steps',
+                defaultDurationSecs: 20,
+                steps: [
+                    'Start on hands and knees and lift the knees an inch off the mat.',
+                    'Hold with a flat back and a still pelvis for the set time.',
+                    'Crawl forward slowly with opposite hand and foot, keeping the knees low.'
+                ],
+                tips: 'Keep hips level and avoid letting the knees drift higher than the hips.'
+            },
+            {
+                id: 'bw_wall_angels',
+                title: 'Wall Angels',
+                tiedPoseIds: ['fish_pose', 'camel_pose', 'wheel_pose', 'handstand', 'upward_dog'],
+                target: 'Back',
+                level: 'Beginner',
+                type: 'Thoracic Mobility Strength',
+                intensity: 3,
+                targetReps: '3 Sets x 12 Reps',
+                defaultDurationSecs: 45,
+                steps: [
+                    'Stand with the back, head and hips against a wall and elbows bent at shoulder height.',
+                    'Slide the arms slowly overhead while keeping the wrists and elbows in contact with the wall.',
+                    'Lower back to the starting position without arching the lower back.'
+                ],
+                tips: 'Take a small step forward from the wall if the ribs flare or the lower back arches.'
             }
         ];
 
@@ -2090,7 +2758,7 @@
             {
                 id: 'str_neck_side',
                 title: 'Gentle Upper Trap & Lateral Neck Tilt',
-                tiedPoseIds: ['headstand', 'childs_pose', 'corpse_pose', 'shoulderstand'],
+                tiedPoseIds: ['headstand', 'childs_pose', 'corpse_pose', 'shoulderstand', 'plow_pose', 'fish_pose'],
                 target: 'Head & Crown',
                 level: 'Beginner',
                 type: 'Static Relief',
@@ -2107,7 +2775,7 @@
             {
                 id: 'str_neck_levator',
                 title: 'Levator Scapulae Nose-to-Hip Stretch',
-                tiedPoseIds: ['headstand', 'crow_pose', 'shoulderstand'],
+                tiedPoseIds: ['headstand', 'crow_pose', 'shoulderstand', 'plow_pose', 'fish_pose', 'handstand'],
                 target: 'Head & Crown',
                 level: 'Beginner',
                 type: 'Postural Unwinding',
@@ -2124,7 +2792,7 @@
             {
                 id: 'str_eagle_arms',
                 title: 'Eagle Arms Shoulder & Scapular Stretch',
-                tiedPoseIds: ['headstand', 'crow_pose', 'half_lord_fishes', 'eagle_pose', 'cow_face_pose'],
+                tiedPoseIds: ['headstand', 'crow_pose', 'half_lord_fishes', 'eagle_pose', 'cow_face_pose', 'handstand', 'dolphin_pose', 'chair_twist'],
                 target: 'Shoulders',
                 level: 'Intermediate',
                 type: 'Rhomboid Expansion',
@@ -2141,7 +2809,7 @@
             {
                 id: 'str_wrist_flexion_extension',
                 title: 'Kneeling Wrist & Forearm Mobilizer',
-                tiedPoseIds: ['crow_pose', 'downward_dog', 'plank_pose', 'side_crow', 'eight_angle', 'scale_pose'],
+                tiedPoseIds: ['crow_pose', 'downward_dog', 'plank_pose', 'side_crow', 'eight_angle', 'scale_pose', 'handstand', 'peacock_pose', 'firefly_pose', 'dolphin_pose', 'bird_dog'],
                 target: 'Shoulders',
                 level: 'Beginner',
                 type: 'Joint Prep',
@@ -2157,7 +2825,7 @@
             {
                 id: 'str_puppy_dog',
                 title: 'Puppy Dog Chest & Thoracic Opener',
-                tiedPoseIds: ['cobra_pose', 'camel_pose', 'downward_dog', 'wheel_pose', 'forearm_stand', 'upward_dog', 'wild_thing'],
+                tiedPoseIds: ['cobra_pose', 'camel_pose', 'downward_dog', 'wheel_pose', 'forearm_stand', 'upward_dog', 'wild_thing', 'dolphin_pose', 'fish_pose', 'locust_pose', 'handstand', 'dancer_pose'],
                 target: 'Chest',
                 level: 'Intermediate',
                 type: 'Anterior Extension',
@@ -2174,7 +2842,7 @@
             {
                 id: 'str_doorway_pec',
                 title: 'Doorway Dynamic Chest & Shoulder Opener',
-                tiedPoseIds: ['cobra_pose', 'camel_pose', 'warrior_one', 'wheel_pose'],
+                tiedPoseIds: ['cobra_pose', 'camel_pose', 'warrior_one', 'wheel_pose', 'fish_pose', 'dancer_pose', 'high_lunge', 'locust_pose', 'low_lunge'],
                 target: 'Chest',
                 level: 'Intermediate',
                 type: 'Pectoral Decompression',
@@ -2191,7 +2859,7 @@
             {
                 id: 'str_thread_needle',
                 title: 'Thread-the-Needle Thoracic Twist',
-                tiedPoseIds: ['childs_pose', 'half_lord_fishes', 'downward_dog'],
+                tiedPoseIds: ['childs_pose', 'half_lord_fishes', 'downward_dog', 'reclined_twist', 'chair_twist', 'revolved_triangle', 'bird_dog'],
                 target: 'Back',
                 level: 'Beginner',
                 type: 'Thoracic Mobility',
@@ -2208,7 +2876,7 @@
             {
                 id: 'str_cat_cow',
                 title: 'Cat-Cow Spinal Mobility Dynamics',
-                tiedPoseIds: ['childs_pose', 'cobra_pose', 'downward_dog', 'corpse_pose'],
+                tiedPoseIds: ['childs_pose', 'cobra_pose', 'downward_dog', 'corpse_pose', 'bird_dog', 'locust_pose', 'fish_pose', 'happy_baby', 'reclined_twist'],
                 target: 'Back',
                 level: 'Beginner',
                 type: 'Dynamic Mobilization',
@@ -2225,7 +2893,7 @@
             {
                 id: 'str_seal_stretch',
                 title: 'High Seal Abdominal Extension',
-                tiedPoseIds: ['cobra_pose', 'camel_pose', 'boat_pose', 'upward_dog'],
+                tiedPoseIds: ['cobra_pose', 'camel_pose', 'boat_pose', 'upward_dog', 'locust_pose', 'fish_pose', 'low_lunge'],
                 target: 'Core/Abs',
                 level: 'Intermediate',
                 type: 'Anterior Sheath Lengthening',
@@ -2242,7 +2910,7 @@
             {
                 id: 'str_lizard_lunge',
                 title: 'Lizard Lunge Deep Hip Opener',
-                tiedPoseIds: ['pigeon_pose', 'warrior_one', 'cobbler_pose'],
+                tiedPoseIds: ['pigeon_pose', 'warrior_one', 'cobbler_pose', 'lizard_pose', 'low_lunge', 'high_lunge'],
                 target: 'Hips',
                 level: 'Intermediate',
                 type: 'Deep Hip Flexor & Adductor',
@@ -2259,7 +2927,7 @@
             {
                 id: 'str_frog_stretch',
                 title: 'Frog Stretch Deep Adductor Opener',
-                tiedPoseIds: ['cobbler_pose', 'pigeon_pose', 'warrior_two'],
+                tiedPoseIds: ['cobbler_pose', 'pigeon_pose', 'warrior_two', 'goddess_pose', 'wide_legged_fold', 'happy_baby', 'lotus_pose', 'lizard_pose'],
                 target: 'Hips',
                 level: 'Advanced',
                 type: 'PNF Groin Release',
@@ -2276,7 +2944,7 @@
             {
                 id: 'str_kneeling_psoas',
                 title: 'Kneeling Psoas & Hip Flexor Lunge',
-                tiedPoseIds: ['pigeon_pose', 'warrior_one', 'camel_pose', 'hero_pose'],
+                tiedPoseIds: ['pigeon_pose', 'warrior_one', 'camel_pose', 'hero_pose', 'low_lunge', 'high_lunge', 'lizard_pose', 'dancer_pose'],
                 target: 'Hips',
                 level: 'Beginner',
                 type: 'Flexor Unlocking',
@@ -2293,7 +2961,7 @@
             {
                 id: 'str_figure4_glute',
                 title: 'Seated Figure-4 Piriformis Opener',
-                tiedPoseIds: ['cobbler_pose', 'pigeon_pose', 'half_moon', 'cow_face_pose'],
+                tiedPoseIds: ['cobbler_pose', 'pigeon_pose', 'half_moon', 'cow_face_pose', 'lotus_pose', 'chair_pose', 'happy_baby', 'reclined_twist'],
                 target: 'Hips',
                 level: 'Beginner',
                 type: 'Deep Glute Mobility',
@@ -2310,7 +2978,7 @@
             {
                 id: 'str_reclined_hero',
                 title: 'Reclined Hero Quad Stretch',
-                tiedPoseIds: ['warrior_one', 'camel_pose', 'hero_pose', 'bow_pose'],
+                tiedPoseIds: ['warrior_one', 'camel_pose', 'hero_pose', 'bow_pose', 'dancer_pose', 'low_lunge', 'lizard_pose'],
                 target: 'Quadriceps',
                 level: 'Advanced',
                 type: 'PNF Quad Extension',
@@ -2327,7 +2995,7 @@
             {
                 id: 'str_standing_fold',
                 title: 'Standing Forward Fold Hamstring Release',
-                tiedPoseIds: ['triangle_pose', 'downward_dog'],
+                tiedPoseIds: ['triangle_pose', 'downward_dog', 'forward_fold', 'pyramid_pose', 'wide_legged_fold', 'seated_forward_fold', 'reclined_big_toe', 'revolved_triangle', 'staff_pose'],
                 target: 'Hamstrings',
                 level: 'Beginner',
                 type: 'Posterior Chain Release',
@@ -2344,7 +3012,7 @@
             {
                 id: 'str_wall_gastrocnemius',
                 title: 'Wall-Supported Calf & Achilles Lean',
-                tiedPoseIds: ['downward_dog', 'warrior_one', 'mountain_pose', 'warrior_three'],
+                tiedPoseIds: ['downward_dog', 'warrior_one', 'mountain_pose', 'warrior_three', 'chair_pose', 'high_lunge', 'pyramid_pose', 'dancer_pose'],
                 target: 'Calves',
                 level: 'Beginner',
                 type: 'Lower Leg Decompression',
@@ -2357,6 +3025,256 @@
                     'Bend back knee slightly while keeping heel down to stretch deep soleus.'
                 ],
                 tips: 'Ensure back toes point directly forward, not angled outwards.'
+            },
+            {
+                id: 'str_supine_hamstring',
+                title: 'Supine Hamstring Strap Stretch',
+                tiedPoseIds: ['reclined_big_toe', 'forward_fold', 'seated_forward_fold', 'pyramid_pose', 'warrior_three'],
+                target: 'Hamstrings',
+                level: 'Beginner',
+                type: 'Static Posterior Release',
+                intensity: 3,
+                durationSecs: 45,
+                steps: [
+                    'Lie on the back and loop a strap around the ball of the right foot.',
+                    'Extend the leg toward the ceiling while the left leg stays long on the floor.',
+                    'Walk the hands up the strap until you feel a stretch behind the thigh.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Keep the tailbone down and a soft bend in the knee if the back of the knee feels tight.'
+            },
+            {
+                id: 'str_couch',
+                title: 'Couch Stretch Quad & Hip Flexor Opener',
+                tiedPoseIds: ['low_lunge', 'dancer_pose', 'camel_pose', 'hero_pose', 'bow_pose'],
+                target: 'Quadriceps',
+                level: 'Advanced',
+                type: 'Deep Quad & Hip Flexor',
+                intensity: 7,
+                durationSecs: 60,
+                steps: [
+                    'Kneel facing away from a wall and place the right shin up the wall with the knee on a pad.',
+                    'Step the left foot forward into a lunge.',
+                    'Lift the torso tall and tuck the pelvis under until a stretch appears in the front of the right thigh.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Ease off by moving the back knee away from the wall if the knee feels pinched.'
+            },
+            {
+                id: 'str_standing_quad',
+                title: 'Standing Quad Pull',
+                tiedPoseIds: ['dancer_pose', 'tree_pose', 'bow_pose', 'warrior_one'],
+                target: 'Quadriceps',
+                level: 'Beginner',
+                type: 'Static Quad Release',
+                intensity: 3,
+                durationSecs: 30,
+                steps: [
+                    'Stand tall holding a wall or chair for balance.',
+                    'Bend the right knee and hold the ankle behind you.',
+                    'Draw the heel toward the glute and keep the knees together.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Tuck the pelvis slightly instead of arching the lower back.'
+            },
+            {
+                id: 'str_pedal_calves',
+                title: 'Pedaling Down Dog Calf Stretch',
+                tiedPoseIds: ['downward_dog', 'pyramid_pose', 'mountain_pose', 'dolphin_pose'],
+                target: 'Calves',
+                level: 'Beginner',
+                type: 'Dynamic Calf Mobilizer',
+                intensity: 3,
+                durationSecs: 45,
+                steps: [
+                    'Move into Downward Dog with feet hip-width.',
+                    'Bend the right knee and press the left heel toward the floor.',
+                    'Switch slowly, alternating knees in a pedaling motion.'
+                ],
+                tips: 'Keep the hips high and the spine long, not rounded.'
+            },
+            {
+                id: 'str_cross_body_shoulder',
+                title: 'Cross-Body Shoulder Stretch',
+                tiedPoseIds: ['eagle_pose', 'cow_face_pose', 'handstand', 'dolphin_pose'],
+                target: 'Shoulders',
+                level: 'Beginner',
+                type: 'Static Posterior Delt Release',
+                intensity: 3,
+                durationSecs: 30,
+                steps: [
+                    'Bring the right arm across the chest at shoulder height.',
+                    'Hold the upper arm with the left hand and draw it gently toward the chest.',
+                    'Keep both shoulders low and level.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Press the arm into the hand lightly for a few seconds to help the muscle release.'
+            },
+            {
+                id: 'str_overhead_triceps_lat',
+                title: 'Overhead Triceps & Lat Stretch',
+                tiedPoseIds: ['cow_face_pose', 'handstand', 'warrior_one', 'chair_pose'],
+                target: 'Back',
+                level: 'Beginner',
+                type: 'Static Lat Release',
+                intensity: 3,
+                durationSecs: 30,
+                steps: [
+                    'Raise the right arm overhead and bend the elbow so the hand reaches between the shoulder blades.',
+                    'Hold the right elbow with the left hand and gently draw it back and slightly left.',
+                    'Lean slightly to the left to feel the stretch along the right side of the torso.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Keep the ribs drawn in so the stretch comes from the lat, not the lower back.'
+            },
+            {
+                id: 'str_side_bend',
+                title: 'Standing Crescent Side Bend',
+                tiedPoseIds: ['half_moon', 'extended_side_angle', 'revolved_triangle', 'side_plank'],
+                target: 'Core/Abs',
+                level: 'Beginner',
+                type: 'Lateral Line Lengthening',
+                intensity: 3,
+                durationSecs: 30,
+                steps: [
+                    'Stand with feet together and reach both arms overhead.',
+                    'Hold the right wrist with the left hand and lean to the left.',
+                    'Keep both hips pressing evenly into the floor.',
+                    'Hold, then switch sides.'
+                ],
+                tips: 'Do not twist or lean forward; keep the chest facing the front.'
+            },
+            {
+                id: 'str_90_90',
+                title: '90/90 Hip Rotation Switches',
+                tiedPoseIds: ['firelog_pose', 'lotus_pose', 'lizard_pose', 'cobbler_pose'],
+                target: 'Hips',
+                level: 'Intermediate',
+                type: 'Internal & External Rotation',
+                intensity: 5,
+                durationSecs: 45,
+                steps: [
+                    'Sit with the front shin angled across the mat and the back knee bent at 90 degrees to the side.',
+                    'Sit tall and hinge forward over the front shin to feel the outer hip stretch.',
+                    'Rotate the knees to the opposite side without using the hands.',
+                    'Alternate for the set time.'
+                ],
+                tips: 'Place a block under a lifted hip if the sit bones are not grounded.'
+            },
+            {
+                id: 'str_supine_twist',
+                title: 'Supine Spinal Twist Release',
+                tiedPoseIds: ['reclined_twist', 'half_lord_fishes', 'chair_twist', 'revolved_triangle', 'corpse_pose'],
+                target: 'Back',
+                level: 'Beginner',
+                type: 'Passive Rotation',
+                intensity: 2,
+                durationSecs: 60,
+                steps: [
+                    'Lie on the back and hug both knees to the chest.',
+                    'Let the knees fall to the right while the arms open into a T.',
+                    'Turn the head gently to the left if the neck is comfortable.',
+                    'Hold with slow breathing, then switch sides.'
+                ],
+                tips: 'Place a pillow under the knees if the shoulders lift off the floor.'
+            },
+            {
+                id: 'str_straddle_adductor',
+                title: 'Seated Straddle Adductor Stretch',
+                tiedPoseIds: ['wide_legged_fold', 'cobbler_pose', 'goddess_pose', 'happy_baby'],
+                target: 'Hips',
+                level: 'Intermediate',
+                type: 'Adductor Lengthening',
+                intensity: 5,
+                durationSecs: 60,
+                steps: [
+                    'Sit with the legs spread wide and knees pointing to the ceiling.',
+                    'Hinge forward from the hips with a long spine and walk the hands out.',
+                    'Stop when a stretch is felt along the inner thighs.',
+                    'Breathe for the set time.'
+                ],
+                tips: 'Sit on a folded blanket to help the pelvis tilt forward.'
+            },
+            {
+                id: 'str_neck_chin_tuck',
+                title: 'Chin Tuck & Gentle Neck Rotation',
+                tiedPoseIds: ['fish_pose', 'plow_pose', 'shoulderstand', 'headstand'],
+                target: 'Head & Crown',
+                level: 'Beginner',
+                type: 'Cervical Mobility',
+                intensity: 2,
+                durationSecs: 40,
+                steps: [
+                    'Sit tall and draw the chin straight back as if making a double chin.',
+                    'Slowly rotate the head to the right until a gentle stretch appears.',
+                    'Return to center and rotate to the left.',
+                    'Repeat for the set time.'
+                ],
+                tips: 'Move slowly and stop at any dizziness or sharp pain; this is useful before and after inversions.'
+            },
+            {
+                id: 'str_chest_roll',
+                title: 'Reclined Chest Opener Over Roll',
+                tiedPoseIds: ['fish_pose', 'camel_pose', 'bridge_pose', 'wheel_pose', 'bow_pose', 'locust_pose'],
+                target: 'Chest',
+                level: 'Beginner',
+                type: 'Passive Thoracic Extension',
+                intensity: 3,
+                durationSecs: 60,
+                steps: [
+                    'Place a rolled blanket or towel lengthwise along the mat.',
+                    'Lie back so the roll runs along the spine and the head is supported.',
+                    'Open the arms wide with palms up and breathe into the chest.'
+                ],
+                tips: 'Use a thinner roll if you feel any pinching in the lower back.'
+            },
+            {
+                id: 'str_ankle_rocker',
+                title: 'Kneeling Ankle Rocker',
+                tiedPoseIds: ['garland_pose', 'chair_pose', 'hero_pose', 'firefly_pose'],
+                target: 'Calves',
+                level: 'Beginner',
+                type: 'Ankle Dorsiflexion Mobility',
+                intensity: 3,
+                durationSecs: 45,
+                steps: [
+                    'Kneel in a half-kneeling position with the front foot flat on the floor.',
+                    'Shift the knee forward over the toes while keeping the heel down.',
+                    'Rock gently in and out of the stretch.'
+                ],
+                tips: 'Keep the heel glued down and the knee tracking over the second toe.'
+            },
+            {
+                id: 'str_happy_baby_rock',
+                title: 'Happy Baby Rocking Release',
+                tiedPoseIds: ['happy_baby', 'garland_pose', 'lotus_pose'],
+                target: 'Hips',
+                level: 'Beginner',
+                type: 'Dynamic Hip Release',
+                intensity: 3,
+                durationSecs: 45,
+                steps: [
+                    'Lie on the back and hold the outer feet with the knees wide.',
+                    'Rock gently side to side to massage the lower back.',
+                    'Slow down and hold the center position for a few breaths.'
+                ],
+                tips: 'Hold the backs of the thighs instead if the neck or shoulders feel strained.'
+            },
+            {
+                id: 'str_thoracic_chair',
+                title: 'Seated Thoracic Extension Over Chair',
+                tiedPoseIds: ['camel_pose', 'wheel_pose', 'fish_pose', 'cobra_pose'],
+                target: 'Back',
+                level: 'Intermediate',
+                type: 'Thoracic Extension',
+                intensity: 4,
+                durationSecs: 45,
+                steps: [
+                    'Sit on a chair with the upper back resting against the top of the backrest.',
+                    'Interlace the hands behind the head to support the neck.',
+                    'Lean back over the backrest and breathe into the upper back.'
+                ],
+                tips: 'Keep the ribs drawn in so the stretch comes from the upper back, not the lower back.'
             }
         ];
 
@@ -2401,7 +3319,32 @@
             scale_pose: ['Shoulders', 'Hips'],
             side_plank: ['Shoulders', 'Hips'],
             boat_pose: ['Hips', 'Quadriceps'],
-            half_lord_fishes: ['Back', 'Hips']
+            half_lord_fishes: ['Back', 'Hips'],
+            forward_fold: ['Back', 'Calves'],
+            staff_pose: ['Back', 'Hamstrings'],
+            chair_pose: ['Hips', 'Core/Abs'],
+            goddess_pose: ['Quadriceps', 'Core/Abs'],
+            pyramid_pose: ['Calves', 'Back'],
+            wide_legged_fold: ['Hips', 'Back'],
+            dancer_pose: ['Chest', 'Hips'],
+            high_lunge: ['Hips', 'Core/Abs'],
+            handstand: ['Core/Abs', 'Back'],
+            dolphin_pose: ['Hamstrings', 'Core/Abs'],
+            plow_pose: ['Hamstrings', 'Shoulders'],
+            firefly_pose: ['Hamstrings', 'Shoulders'],
+            peacock_pose: ['Shoulders', 'Back'],
+            locust_pose: ['Hips', 'Shoulders'],
+            fish_pose: ['Head & Crown', 'Back'],
+            low_lunge: ['Quadriceps', 'Core/Abs'],
+            lizard_pose: ['Quadriceps', 'Hamstrings'],
+            lotus_pose: ['Back', 'Calves'],
+            happy_baby: ['Back', 'Hamstrings'],
+            seated_forward_fold: ['Back', 'Calves'],
+            reclined_big_toe: ['Hips', 'Calves'],
+            reclined_twist: ['Hips', 'Core/Abs', 'Chest'],
+            bird_dog: ['Back', 'Hips'],
+            chair_twist: ['Quadriceps', 'Back'],
+            revolved_triangle: ['Core/Abs', 'Hips', 'Back']
         };
 
         function applyDefaultSecondaryTargets() {
@@ -2412,43 +3355,6 @@
             });
         }
         applyDefaultSecondaryTargets();
-
-        // ================= BROWSER PERSISTENCE =================
-        // Every change is saved to this browser's localStorage and restored on load.
-        // Importing a backup replaces the stored data (and is then saved itself).
-        const STORAGE_KEY = 'zenith_pro_state_v1';
-
-        function saveState() {
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify({
-                    yogaDatabase: YOGA_DATABASE,
-                    bodyweightDatabase: BODYWEIGHT_EXERCISES_DATABASE,
-                    stretchDatabase: TARGETED_STRETCHES_DATABASE
-                }));
-            } catch (e) { /* storage unavailable or full: app still works for this session */ }
-        }
-
-        function loadSavedState() {
-            try {
-                const raw = localStorage.getItem(STORAGE_KEY);
-                if (!raw) return;
-                const saved = JSON.parse(raw);
-                if (Array.isArray(saved.yogaDatabase)) {
-                    YOGA_DATABASE.length = 0;
-                    YOGA_DATABASE.push(...saved.yogaDatabase);
-                }
-                if (Array.isArray(saved.bodyweightDatabase)) {
-                    BODYWEIGHT_EXERCISES_DATABASE.length = 0;
-                    BODYWEIGHT_EXERCISES_DATABASE.push(...saved.bodyweightDatabase);
-                }
-                if (Array.isArray(saved.stretchDatabase)) {
-                    TARGETED_STRETCHES_DATABASE.length = 0;
-                    TARGETED_STRETCHES_DATABASE.push(...saved.stretchDatabase);
-                }
-                applyDefaultSecondaryTargets();
-            } catch (e) { /* corrupted or unavailable: fall back to built-in data */ }
-        }
-        loadSavedState();
 
         function getSecondaryTargets(pose) {
             return Array.isArray(pose.secondaryTargets) ? pose.secondaryTargets.filter(t => t !== pose.target) : [];
@@ -2878,7 +3784,6 @@
 
             // Synchronize tied Bodyweight Drills & Stretches
             syncPoseToDrillsAndStretches(targetPoseId, customPoseSelectedBWIds, customPoseSelectedStretchIds);
-            saveState();
 
             closeCustomPoseModal();
             populatePoseDropdowns();
@@ -2917,7 +3822,6 @@
                         st.tiedPoseIds = st.tiedPoseIds.filter(id => id !== poseId);
                     }
                 });
-                saveState();
 
                 if (selectedInspectorPoseId === poseId) {
                     closeInspectorModal();
@@ -3419,7 +4323,6 @@
                 showToastNotification('Custom drill created!', 'success');
             }
 
-            saveState();
             closeCustomBWModal();
             renderSkillTrees(currentFamilyFilter);
             renderBWExercisesList();
@@ -3435,7 +4338,6 @@
             const bw = BODYWEIGHT_EXERCISES_DATABASE[index];
             showConfirmModal({title:`Delete drill?`,message:`Delete "${bw.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 BODYWEIGHT_EXERCISES_DATABASE.splice(index, 1);
-                saveState();
                 showToastNotification('Drill deleted.', 'success');
 
                 if (selectedBWId === exerciseId) {
@@ -3542,7 +4444,6 @@
             if (!bw || !isFinite(secs)) { resetBWHoldTimer(); return; }
             secs = Math.min(3600, Math.max(0, secs));
             bw.timerSecs = secs; // timer-only override; recommended time (defaultDurationSecs) is untouched
-            saveState();
             resetBWHoldTimer();
             showToastNotification(`Interval time set to ${secs} sec.`, 'success');
         }
@@ -3785,7 +4686,6 @@
                 showToastNotification('Custom stretch created successfully!', 'success');
             }
 
-            saveState();
             closeCustomStretchModal();
             renderSkillTrees(currentFamilyFilter);
             renderStretchesList();
@@ -3801,7 +4701,6 @@
             const stretch = TARGETED_STRETCHES_DATABASE[index];
             showConfirmModal({title:`Delete stretch?`,message:`Delete "${stretch.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 TARGETED_STRETCHES_DATABASE.splice(index, 1);
-                saveState();
                 showToastNotification('Stretch deleted successfully.', 'success');
 
                 if (selectedStretchId === stretchId) {
@@ -3908,7 +4807,6 @@
             if (!stretch || !isFinite(secs)) { resetStretchHoldTimer(); return; }
             secs = Math.min(3600, Math.max(0, secs));
             stretch.timerSecs = secs; // timer-only override; recommended hold (durationSecs) is untouched
-            saveState();
             resetStretchHoldTimer();
             showToastNotification(`Hold time set to ${secs} sec.`, 'success');
         }
@@ -3939,7 +4837,6 @@
             if (!pose) return;
 
             pose.activeModifier = modifierKey;
-            saveState();
             renderSkillTrees(currentFamilyFilter);
 
             if (selectedInspectorPoseId === poseId) {
@@ -4170,7 +5067,6 @@
                 showToastNotification('New tier modifier added!', 'success');
             }
 
-            saveState();
             closeCustomModifierModal();
             renderSkillTrees(currentFamilyFilter);
             if (selectedInspectorPoseId === poseId) {
@@ -4194,7 +5090,6 @@
                     pose.activeModifier = Object.keys(pose.modifiers)[0];
                 }
 
-                saveState();
                 showToastNotification('Modifier removed.', 'info');
                 renderSkillTrees(currentFamilyFilter);
                 if (selectedInspectorPoseId === poseId) {
@@ -4477,7 +5372,6 @@
                     renderAnatomyExerciseList();
 
                     applyDefaultSecondaryTargets();
-                    saveState(); // the import overwrites whatever was stored in the browser
                     renderSkillTrees(currentFamilyFilter);
                     renderAnatomyExerciseList();
                     showToastNotification('Zenith PRO database restored successfully!', 'success');
