@@ -103,7 +103,7 @@
                 </div>
                 <div>
                     <span class="font-bold text-amber-300 block">Managing Your Custom Asanas & Training Data</span>
-                    <p class="text-slate-400">Custom asanas, modifiers, drills, and progress are preserved in your session. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
+                    <p class="text-slate-400">Custom asanas, modifiers, drills, and progress are saved automatically in this browser. Importing a backup overwrites them. Export a <code class="text-amber-300 bg-slate-900 px-1 py-0.5 rounded">.json</code> backup anytime to transfer or load data across devices.</p>
                 </div>
             </div>
             <div class="flex items-center gap-2 self-end sm:self-center">
@@ -2413,6 +2413,43 @@
         }
         applyDefaultSecondaryTargets();
 
+        // ================= BROWSER PERSISTENCE =================
+        // Every change is saved to this browser's localStorage and restored on load.
+        // Importing a backup replaces the stored data (and is then saved itself).
+        const STORAGE_KEY = 'zenith_pro_state_v1';
+
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                    yogaDatabase: YOGA_DATABASE,
+                    bodyweightDatabase: BODYWEIGHT_EXERCISES_DATABASE,
+                    stretchDatabase: TARGETED_STRETCHES_DATABASE
+                }));
+            } catch (e) { /* storage unavailable or full: app still works for this session */ }
+        }
+
+        function loadSavedState() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) return;
+                const saved = JSON.parse(raw);
+                if (Array.isArray(saved.yogaDatabase)) {
+                    YOGA_DATABASE.length = 0;
+                    YOGA_DATABASE.push(...saved.yogaDatabase);
+                }
+                if (Array.isArray(saved.bodyweightDatabase)) {
+                    BODYWEIGHT_EXERCISES_DATABASE.length = 0;
+                    BODYWEIGHT_EXERCISES_DATABASE.push(...saved.bodyweightDatabase);
+                }
+                if (Array.isArray(saved.stretchDatabase)) {
+                    TARGETED_STRETCHES_DATABASE.length = 0;
+                    TARGETED_STRETCHES_DATABASE.push(...saved.stretchDatabase);
+                }
+                applyDefaultSecondaryTargets();
+            } catch (e) { /* corrupted or unavailable: fall back to built-in data */ }
+        }
+        loadSavedState();
+
         function getSecondaryTargets(pose) {
             return Array.isArray(pose.secondaryTargets) ? pose.secondaryTargets.filter(t => t !== pose.target) : [];
         }
@@ -2841,6 +2878,7 @@
 
             // Synchronize tied Bodyweight Drills & Stretches
             syncPoseToDrillsAndStretches(targetPoseId, customPoseSelectedBWIds, customPoseSelectedStretchIds);
+            saveState();
 
             closeCustomPoseModal();
             populatePoseDropdowns();
@@ -2879,6 +2917,7 @@
                         st.tiedPoseIds = st.tiedPoseIds.filter(id => id !== poseId);
                     }
                 });
+                saveState();
 
                 if (selectedInspectorPoseId === poseId) {
                     closeInspectorModal();
@@ -3380,6 +3419,7 @@
                 showToastNotification('Custom drill created!', 'success');
             }
 
+            saveState();
             closeCustomBWModal();
             renderSkillTrees(currentFamilyFilter);
             renderBWExercisesList();
@@ -3395,6 +3435,7 @@
             const bw = BODYWEIGHT_EXERCISES_DATABASE[index];
             showConfirmModal({title:`Delete drill?`,message:`Delete "${bw.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 BODYWEIGHT_EXERCISES_DATABASE.splice(index, 1);
+                saveState();
                 showToastNotification('Drill deleted.', 'success');
 
                 if (selectedBWId === exerciseId) {
@@ -3501,6 +3542,7 @@
             if (!bw || !isFinite(secs)) { resetBWHoldTimer(); return; }
             secs = Math.min(3600, Math.max(0, secs));
             bw.timerSecs = secs; // timer-only override; recommended time (defaultDurationSecs) is untouched
+            saveState();
             resetBWHoldTimer();
             showToastNotification(`Interval time set to ${secs} sec.`, 'success');
         }
@@ -3743,6 +3785,7 @@
                 showToastNotification('Custom stretch created successfully!', 'success');
             }
 
+            saveState();
             closeCustomStretchModal();
             renderSkillTrees(currentFamilyFilter);
             renderStretchesList();
@@ -3758,6 +3801,7 @@
             const stretch = TARGETED_STRETCHES_DATABASE[index];
             showConfirmModal({title:`Delete stretch?`,message:`Delete "${stretch.title}"? This will also un-link it from any paired asanas.`,confirmLabel:'Delete'}, () => {
                 TARGETED_STRETCHES_DATABASE.splice(index, 1);
+                saveState();
                 showToastNotification('Stretch deleted successfully.', 'success');
 
                 if (selectedStretchId === stretchId) {
@@ -3864,6 +3908,7 @@
             if (!stretch || !isFinite(secs)) { resetStretchHoldTimer(); return; }
             secs = Math.min(3600, Math.max(0, secs));
             stretch.timerSecs = secs; // timer-only override; recommended hold (durationSecs) is untouched
+            saveState();
             resetStretchHoldTimer();
             showToastNotification(`Hold time set to ${secs} sec.`, 'success');
         }
@@ -3894,6 +3939,7 @@
             if (!pose) return;
 
             pose.activeModifier = modifierKey;
+            saveState();
             renderSkillTrees(currentFamilyFilter);
 
             if (selectedInspectorPoseId === poseId) {
@@ -4124,6 +4170,7 @@
                 showToastNotification('New tier modifier added!', 'success');
             }
 
+            saveState();
             closeCustomModifierModal();
             renderSkillTrees(currentFamilyFilter);
             if (selectedInspectorPoseId === poseId) {
@@ -4147,6 +4194,7 @@
                     pose.activeModifier = Object.keys(pose.modifiers)[0];
                 }
 
+                saveState();
                 showToastNotification('Modifier removed.', 'info');
                 renderSkillTrees(currentFamilyFilter);
                 if (selectedInspectorPoseId === poseId) {
@@ -4429,12 +4477,14 @@
                     renderAnatomyExerciseList();
 
                     applyDefaultSecondaryTargets();
+                    saveState(); // the import overwrites whatever was stored in the browser
                     renderSkillTrees(currentFamilyFilter);
                     renderAnatomyExerciseList();
                     showToastNotification('Zenith PRO database restored successfully!', 'success');
                 } catch (err) {
                     showToastNotification('Failed to parse JSON backup file.', 'error');
                 }
+                event.target.value = ''; // allow re-importing the same file later
             };
             reader.readAsText(file);
         }
