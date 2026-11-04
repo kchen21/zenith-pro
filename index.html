@@ -3856,11 +3856,17 @@
             renderSkillTrees(family);
         }
 
+        // Lowercases and strips accents/diacritics so "virabhadrasana" matches "Vīrabhadrāsana"
+        function normalizeSearchText(text) {
+            return String(text || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+        }
+
         function renderSkillTrees(familyFilter = 'All') {
             const container = document.getElementById('skill-trees-wrapper');
             container.innerHTML = '';
 
             const searchVal = (document.getElementById('pose-search-input')?.value || '').toLowerCase().trim();
+            const searchNorm = normalizeSearchText(searchVal);
 
             const categories = [
                 'Restorative & Foundations',
@@ -3880,10 +3886,10 @@
 
                 if (searchVal.length > 0) {
                     catExercises = catExercises.filter(pose => {
-                        const eng = pose.englishName.toLowerCase();
-                        const san = (pose.sanskritName || '').toLowerCase();
-                        const mods = Object.values(pose.modifiers).map(m => m.englishName.toLowerCase()).join(' ');
-                        return eng.includes(searchVal) || san.includes(searchVal) || mods.includes(searchVal);
+                        const eng = normalizeSearchText(pose.englishName);
+                        const san = normalizeSearchText(pose.sanskritName);
+                        const mods = Object.values(pose.modifiers).map(m => normalizeSearchText(m.englishName)).join(' ');
+                        return eng.includes(searchNorm) || san.includes(searchNorm) || mods.includes(searchNorm);
                     });
                 }
 
@@ -4126,14 +4132,14 @@
             const container = document.getElementById('bw-cards-grid');
             if (!container) return;
 
-            const searchVal = (document.getElementById('bw-search-input')?.value || '').toLowerCase();
+            const searchVal = normalizeSearchText(document.getElementById('bw-search-input')?.value);
             const poseVal = document.getElementById('bw-pose-filter')?.value || 'All';
             const levelVal = document.getElementById('bw-level-filter')?.value || 'All';
 
             const filtered = BODYWEIGHT_EXERCISES_DATABASE.filter(bw => {
                 const tiedPoseIds = getTiedPoseIds(bw);
                 const matchesMuscle = currentBWMuscleFilter === 'All' || bw.target.toLowerCase().includes(currentBWMuscleFilter.toLowerCase());
-                const matchesSearch = bw.title.toLowerCase().includes(searchVal) || bw.target.toLowerCase().includes(searchVal) || bw.type.toLowerCase().includes(searchVal);
+                const matchesSearch = normalizeSearchText(bw.title).includes(searchVal) || normalizeSearchText(bw.target).includes(searchVal) || normalizeSearchText(bw.type).includes(searchVal);
                 const matchesPose = poseVal === 'All' || tiedPoseIds.includes(poseVal);
                 const matchesLevel = levelVal === 'All' || bw.level === levelVal;
                 return matchesMuscle && matchesSearch && matchesPose && matchesLevel;
@@ -4490,14 +4496,14 @@
             const container = document.getElementById('stretches-cards-grid');
             if (!container) return;
 
-            const searchVal = (document.getElementById('stretch-search-input')?.value || '').toLowerCase();
+            const searchVal = normalizeSearchText(document.getElementById('stretch-search-input')?.value);
             const poseVal = document.getElementById('stretch-pose-filter')?.value || 'All';
             const levelVal = document.getElementById('stretch-level-filter')?.value || 'All';
 
             const filtered = TARGETED_STRETCHES_DATABASE.filter(st => {
                 const tiedPoseIds = getTiedPoseIds(st);
                 const matchesMuscle = currentStretchMuscleFilter === 'All' || st.target.toLowerCase().includes(currentStretchMuscleFilter.toLowerCase());
-                const matchesSearch = st.title.toLowerCase().includes(searchVal) || st.target.toLowerCase().includes(searchVal);
+                const matchesSearch = normalizeSearchText(st.title).includes(searchVal) || normalizeSearchText(st.target).includes(searchVal);
                 const matchesPose = poseVal === 'All' || tiedPoseIds.includes(poseVal);
                 const matchesLevel = levelVal === 'All' || st.level === levelVal;
                 return matchesMuscle && matchesSearch && matchesPose && matchesLevel;
